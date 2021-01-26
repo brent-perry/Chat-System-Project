@@ -1,0 +1,166 @@
+body {
+    background-color: #171c26;
+    padding:auto;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  h1{
+      color: #ffffff;
+      font-family: 'Mukta', sans-serif;
+  }
+
+  #registerContainer{
+    margin: auto;
+    position: relative;
+    display: flex;
+  }
+
+  input{
+      font-family: 'Mukta', sans-serif;
+      background-color: #40465377;
+      color: #ffffff;
+      width: 60%;
+      font-size: 22px;
+      outline: 0 none;
+      border-color: rgba(78, 69, 70, 0.075);
+      padding: 5px;
+      display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    display: flex;
+  }
+
+  .registerFormWrapper{
+      margin: 0;
+      position: fixed;
+      top: 50%;
+      height: 80%;
+      width: 60%;
+      left: 20%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      background-color: #2227336b;
+      box-shadow: 5px 5px 30px #141414;
+  }
+
+  textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
+        font-family: 'Mukta', sans-serif;
+        border-color: rgba(229, 23, 195, 0.8);
+        box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 10px rgba(229, 23, 195, 0.8);
+        outline: 0 none;
+    }
+
+    #registerButton{
+        font-family: 'Mukta', sans-serif;
+        color: #ffffff83;
+        background: rgb(238,3,249);
+        background: linear-gradient(90deg, rgba(238,3,249,1) 14%, rgba(171,17,243,1) 50%, rgba(98,32,237,1) 100%);
+        border: none;
+        width: 30%;
+        font-size: 28px;
+        font-weight: 800;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
+        border-radius: 5px;
+        position: absolute;
+        margin: 0;
+        left: 33%;
+    }
+
+    #registerButton:hover{
+        box-shadow: 0 10px 30px rgba(23, 71, 229, 0.075) inset, 0 5px 20px rgba(229, 23, 195, 0.8);
+
+    }
+
+    .registerTitle{
+        margin-left: 40%;
+    }
+
+    #loginButton{
+        font-family: 'Mukta', sans-serif;
+        color: #ffffff83;
+        background: rgb(238,3,249);
+        background: linear-gradient(90deg, rgba(238,3,249,1) 14%, rgba(171,17,243,1) 50%, rgba(98,32,237,1) 100%);
+        border: none;
+        width: 30%;
+        font-size: 28px;
+        font-weight: 800;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
+        border-radius: 5px;
+        position: absolute;
+        margin: 0;
+        left: 33%; 
+    }
+
+    #loginButton:hover{
+        box-shadow: 0 10px 30px rgba(23, 71, 229, 0.075) inset, 0 5px 20px rgba(229, 23, 195, 0.8);
+
+    }
+
+    #loginGuest{
+        font-family: 'Mukta', sans-serif;
+        color: #ffffff83;
+        background: rgb(238,3,249);
+        background: linear-gradient(90deg, rgba(238,3,249,1) 14%, rgba(171,17,243,1) 50%, rgba(98,32,237,1) 100%);
+        border: none;
+        width: 30%;
+        font-size: 28px;
+        font-weight: 800;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
+        border-radius: 5px;
+        position: absolute;
+        margin: 0;
+        left: 33%; 
+    }
+
+    #register{
+        font-family: 'Mukta', sans-serif;
+        color: #ffffff83;
+        background: rgb(238,3,249);
+        background: linear-gradient(90deg, rgba(238,3,249,1) 14%, rgba(171,17,243,1) 50%, rgba(98,32,237,1) 100%);
+        border: none;
+        width: 30%;
+        font-size: 28px;
+        font-weight: 800;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
+        border-radius: 5px;
+        position: absolute;
+        margin: 0;
+        left: 33%; 
+    }
+
+    .nav-links{
+        margin-right:2%;
+        margin-top: 2%;
+        color: white;
+        display: flex;
+        text-decoration: none;
+    }
+
+    nav ul{
+        display: flex;
+        align-items: center;
+      }
+
+      nav li{
+        list-style: none;
+        width: 10%;
+
+      }
+
+      nav li a{
+        font-family: 'Mukta', sans-serif;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 18px;
+        letter-spacing: 3px;
+        text-shadow: 10px 10px 20px black; 
+      }
+
+  
