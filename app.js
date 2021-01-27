@@ -15,12 +15,9 @@ app.use(express.static(path.join(__dirname + '/css')));
 app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', function(req, res){
-    res.render('home');
+    res.render('welcome');
 });
 
-app.get('/welcome', function(req, res){
-    res.render('welcome');
-})
 app.get('/register', function(req, res){
   res.render('register');
 });

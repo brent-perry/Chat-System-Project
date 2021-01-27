@@ -9,10 +9,13 @@
     "nodemon": "^2.0.7",
     "ws": "^7.4.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "webpack": "^5.18.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "run": "webpack-dev-server --port 3000"
   },
   "repository": {
     "type": "git",
