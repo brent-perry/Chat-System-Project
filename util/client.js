@@ -28,19 +28,6 @@
       if (DEV) {
         console.log('recieved message', message);
       };
-      const obj = JSON.parse(message.data);
-      switch(obj.event) {
-        case "Joined":
-          let newUser = obj.newUser;
-          let element = newUser.element = document.createElement('div');
-          element.classList.add('user');
-          element.style.backgroundColor = newUser.color;
-          newUser.element = element;
-          document.body.appendChild(element);
-          break;
-        case "Left":
-          
-      }
     };
 
 })();
