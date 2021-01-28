@@ -1,6 +1,5 @@
 "use strict";
 
-export function test()
-    {
+export function test(){
     console.log('hello');
     }
