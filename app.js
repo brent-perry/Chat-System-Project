@@ -12,6 +12,8 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 app.use(express.static(path.join(__dirname + '/css')));
+app.use(express.static(path.join(__dirname + '/client')));
+
 app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', function(req, res){
