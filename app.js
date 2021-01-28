@@ -21,8 +21,8 @@ app.get('/register', function(req, res){
   res.render('register');
 });
 
-app.get('/Dashboard', function(req, res){
-    res.render('Dashboard');
+app.get('/dashboard', function(req, res){
+    res.render('dashboard');
   });
   
 

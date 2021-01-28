@@ -1,166 +1,344 @@
 body {
-    background-color: #171c26;
-    padding:auto;
+    background-color: #1c1c1d;
+    padding: auto;
     margin: 0;
     box-sizing: border-box;
-  }
+}
 
-  h1{
-      color: #ffffff;
-      font-family: 'Mukta', sans-serif;
-  }
+h1 {
+    color: #ffffff;
+    font-family: 'Mukta', sans-serif;
+}
 
-  #registerContainer{
+#registerContainer {
     margin: auto;
     position: relative;
     display: flex;
-  }
+}
 
-  input{
-      font-family: 'Mukta', sans-serif;
-      background-color: #40465377;
-      color: #ffffff;
-      width: 60%;
-      font-size: 22px;
-      outline: 0 none;
-      border-color: rgba(78, 69, 70, 0.075);
-      padding: 5px;
-      display: block;
+input {
+    font-family: 'Mukta', sans-serif;
+    background-color: rgba(0, 0, 0, 0.363);
+    color: #ffffff;
+    width: 60%;
+    font-size: 22px;
+    outline: 0 none;
+    border-color: rgba(78, 69, 70, 0.075);
+    padding: 5px;
+    display: block;
     margin-left: auto;
     margin-right: auto;
     align-items: center;
     display: flex;
+    box-shadow: 10px 10px 20px -22px gray;
+}
+
+.registerFormWrapper {
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    height: 80%;
+    width: 60%;
+    left: 20%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    background-color: #2227336b;
+    box-shadow: 5px 5px 30px #141414;
+}
+
+textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
+    font-family: 'Mukta', sans-serif;
+    border-color: rgba(229, 23, 195, 0.8);
+    box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 10px rgba(229, 23, 195, 0.8);
+    outline: 0 none;
+}
+
+#registerButton {
+    font-family: 'Mukta', sans-serif;
+    color: #ffffff83;
+    background: rgb(238, 3, 249);
+    background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%);
+    border: none;
+    width: 30%;
+    font-size: 28px;
+    font-weight: 800;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
+    border-radius: 5px;
+    position: absolute;
+    margin: 0;
+    left: 33%;
+}
+
+#registerButton:hover {
+    box-shadow: 0 10px 30px rgba(23, 71, 229, 0.075) inset, 0 5px 20px rgba(229, 23, 195, 0.8);
+}
+
+.registerTitle {
+    margin-left: 40%;
+}
+
+#loginButton {
+    font-family: 'Mukta', sans-serif;
+    color: #ffffff83;
+    background: rgb(238, 3, 249);
+    background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%);
+    border: none;
+    width: 30%;
+    font-size: 28px;
+    font-weight: 800;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
+    border-radius: 5px;
+    position: absolute;
+    margin: 0;
+    left: 33%;
+}
+
+#loginButton:hover {
+    box-shadow: 0 10px 30px rgba(23, 71, 229, 0.075) inset, 0 5px 20px rgba(229, 23, 195, 0.8);
+}
+
+#loginGuest {
+    font-family: 'Mukta', sans-serif;
+    color: #ffffff83;
+    background: rgb(238, 3, 249);
+    background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%);
+    border: none;
+    width: 30%;
+    font-size: 28px;
+    font-weight: 800;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
+    border-radius: 5px;
+    position: absolute;
+    margin: 0;
+    left: 33%;
+}
+
+#register {
+    font-family: 'Mukta', sans-serif;
+    color: #ffffff83;
+    background: rgb(238, 3, 249);
+    background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%);
+    border: none;
+    width: 50%;
+    font-size: 28px;
+    font-weight: 800;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
+    border-radius: 5px;
+    position: absolute;
+    margin: 0;
+}
+
+.nav-links {
+    margin-right: 5%;
+    color: white;
+    display: flex;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left:5em;
+}
+
+nav li {
+    list-style: none;
+    width: 10%;
+    margin: 20px;
+}
+
+nav li a {
+    font-family: 'Mukta', sans-serif;
+    color: rgba(190, 190, 190, 0.404);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.336);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(73, 73, 73, 0.616);
+}
+
+nav li a:hover{
+    color:#ee03f9;
+    text-decoration: none;
+    text-shadow: 0px 0px 8px rgba(229, 23, 195, 0.8);
   }
 
-  .registerFormWrapper{
-      margin: 0;
-      position: fixed;
-      top: 50%;
-      height: 80%;
-      width: 60%;
-      left: 20%;
-      -ms-transform: translateY(-50%);
-      transform: translateY(-50%);
-      background-color: #2227336b;
-      box-shadow: 5px 5px 30px #141414;
+#dash{
+    display: flex;
+    border-color: rgba(78, 69, 70, 0.075);
+}
+
+.containLeft{
+margin: 10px;
+padding: 20px;
+width: 8%;
+justify-content: center;
+
+}
+
+.channelCurrent{
+    width: 7em;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.363);
+    border-radius: 8px;
+    box-shadow: 10px 10px 20px -22px gray;
+}
+
+.navDiv{
+    border-color: rgba(78, 69, 70, 0.075);
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 15%;
+    box-shadow: 10px 10px 20px -22px gray;
+}
+
+ul li a::after {
+    position: absolute;
+    content: "";
+    height: 3px;
+    width: 100%;
+    top: 100%;
+    left: 10px;
+    background: #ee03f9;
+    transition: transform 1s;
+    transform: scaleX(0);
+    transform-origin: right;
+    box-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
   }
 
-  textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {   
-        font-family: 'Mukta', sans-serif;
-        border-color: rgba(229, 23, 195, 0.8);
-        box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075) inset, 0 0 10px rgba(229, 23, 195, 0.8);
-        outline: 0 none;
-    }
+  ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
 
-    #registerButton{
-        font-family: 'Mukta', sans-serif;
-        color: #ffffff83;
-        background: rgb(238,3,249);
-        background: linear-gradient(90deg, rgba(238,3,249,1) 14%, rgba(171,17,243,1) 50%, rgba(98,32,237,1) 100%);
-        border: none;
-        width: 30%;
-        font-size: 28px;
-        font-weight: 800;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
-        border-radius: 5px;
-        position: absolute;
-        margin: 0;
-        left: 33%;
-    }
 
-    #registerButton:hover{
-        box-shadow: 0 10px 30px rgba(23, 71, 229, 0.075) inset, 0 5px 20px rgba(229, 23, 195, 0.8);
+  a:active {
+    color:#ee03f9;
+    text-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
+  }
 
-    }
+  .chat{
+    display: flex;
+    flex-grow: 1;
+    margin-bottom: auto;
+    float: bottom;
+  }
 
-    .registerTitle{
-        margin-left: 40%;
-    }
+  #sendButton{
+    font-family: 'Mukta', sans-serif;
+    color: #ffffff83;
+    background: rgb(238, 3, 249);
+    background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%);
+    border: none;
+    width: 10%;
+    font-size: 28px;
+    font-weight: 800;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
+    border-radius: 5px;
+    position: absolute;
+    margin: 0;
+    left: 70%;
+  }
 
-    #loginButton{
-        font-family: 'Mukta', sans-serif;
-        color: #ffffff83;
-        background: rgb(238,3,249);
-        background: linear-gradient(90deg, rgba(238,3,249,1) 14%, rgba(171,17,243,1) 50%, rgba(98,32,237,1) 100%);
-        border: none;
-        width: 30%;
-        font-size: 28px;
-        font-weight: 800;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
-        border-radius: 5px;
-        position: absolute;
-        margin: 0;
-        left: 33%; 
-    }
+  input{
+    flex-grow:2;
+  }
 
-    #loginButton:hover{
-        box-shadow: 0 10px 30px rgba(23, 71, 229, 0.075) inset, 0 5px 20px rgba(229, 23, 195, 0.8);
+  .chatBox{
+      position: relative;
+    display:flex;
+    flex-direction:row;
+    bottom:5%;
+    left: 15%;
+    position: fixed; 
+    width: 50%;
+  }
 
-    }
+  #sendText{
+    font-size: 20px;
+    font-weight: 800;
+    border-radius: 5px;
+    color: #ffffff83;
+    border: none;
+    background: rgb(238, 3, 249);
+    background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%); 
+  }
 
-    #loginGuest{
-        font-family: 'Mukta', sans-serif;
-        color: #ffffff83;
-        background: rgb(238,3,249);
-        background: linear-gradient(90deg, rgba(238,3,249,1) 14%, rgba(171,17,243,1) 50%, rgba(98,32,237,1) 100%);
-        border: none;
-        width: 30%;
-        font-size: 28px;
-        font-weight: 800;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
-        border-radius: 5px;
-        position: absolute;
-        margin: 0;
-        left: 33%; 
-    }
+  .mesgChat{
+      width: 40%;
+  }
 
-    #register{
-        font-family: 'Mukta', sans-serif;
-        color: #ffffff83;
-        background: rgb(238,3,249);
-        background: linear-gradient(90deg, rgba(238,3,249,1) 14%, rgba(171,17,243,1) 50%, rgba(98,32,237,1) 100%);
-        border: none;
-        width: 30%;
-        font-size: 28px;
-        font-weight: 800;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
-        border-radius: 5px;
-        position: absolute;
-        margin: 0;
-        left: 33%; 
-    }
+  .nameDisplay{
+    color: #ffffff;
+    font-family: 'Mukta', sans-serif;
+    text-align: center;
+    margin-bottom:-20px;
+  }
 
-    .nav-links{
-        margin-right:2%;
-        margin-top: 2%;
-        color: white;
-        display: flex;
-        text-decoration: none;
-    }
+  .score{
+    color: #ffffff;
+    font-family: 'Mukta', sans-serif;
+    text-align: center;  
+  }
 
-    nav ul{
-        display: flex;
-        align-items: center;
-      }
+  .gg-close {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: scale(var(--ggs,1));
+    width: 22px;
+    height: 22px;
+    border: 2px solid transparent;
+    border-radius: 40px
+}
+.gg-close::after,
+.gg-close::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute;
+    width: 16px;
+    height: 2px;
+    background: currentColor;
+    transform: rotate(45deg);
+    border-radius: 5px;
+    top: 8px;
+    left: 1px
+}
+.gg-close::after {
+    transform: rotate(-45deg)
+}
 
-      nav li{
-        list-style: none;
-        width: 10%;
 
-      }
+.logout{
+    float: right;
+    margin-left: 78%;
+}
+ 
 
-      nav li a{
-        font-family: 'Mukta', sans-serif;
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-        font-size: 18px;
-        letter-spacing: 3px;
-        text-shadow: 10px 10px 20px black; 
-      }
+.profileImg{
+    margin-top: 90%;
+    margin-left: 20px;
+    text-align: center;
+    background:  rgb(238, 3, 249);
+    border: 0.1em solid #ffb9f9;
+    border-radius: 50%;
+    box-shadow: 0.375em 0.375em 0 0 rgba(155, 36, 119, 0.37);
+    height: 4em;
+    width: 4em;
+    box-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
+}
 
-  
+.logoutImg{
+    height: 20px;
+    width:20px;
+}
