@@ -148,7 +148,7 @@ nav ul {
     display: flex;
     align-items: center;
     position: relative;
-    padding-left:5em;
+    padding-left: 5em;
 }
 
 nav li {
@@ -169,26 +169,25 @@ nav li a {
     -webkit-text-stroke-color: rgba(73, 73, 73, 0.616);
 }
 
-nav li a:hover{
-    color:#ee03f9;
+nav li a:hover {
+    color: #ee03f9;
     text-decoration: none;
     text-shadow: 0px 0px 8px rgba(229, 23, 195, 0.8);
-  }
+}
 
-#dash{
+#dash {
     display: flex;
     border-color: rgba(78, 69, 70, 0.075);
 }
 
-.containLeft{
-margin: 10px;
-padding: 20px;
-width: 8%;
-justify-content: center;
-
+.containLeft {
+    margin: 10px;
+    padding: 20px;
+    width: 8%;
+    justify-content: center;
 }
 
-.channelCurrent{
+.channelCurrent {
     width: 7em;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.363);
@@ -196,7 +195,7 @@ justify-content: center;
     box-shadow: 10px 10px 20px -22px gray;
 }
 
-.navDiv{
+.navDiv {
     border-color: rgba(78, 69, 70, 0.075);
     margin: 10px;
     padding: 10px;
@@ -217,27 +216,26 @@ ul li a::after {
     transform: scaleX(0);
     transform-origin: right;
     box-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
-  }
+}
 
-  ul li a:hover::after {
+ul li a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
-  }
+}
 
-
-  a:active {
-    color:#ee03f9;
+a:active {
+    color: #ee03f9;
     text-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
-  }
+}
 
-  .chat{
+.chat {
     display: flex;
     flex-grow: 1;
     margin-bottom: auto;
     float: bottom;
-  }
+}
 
-  #sendButton{
+#sendButton {
     font-family: 'Mukta', sans-serif;
     color: #ffffff83;
     background: rgb(238, 3, 249);
@@ -252,61 +250,61 @@ ul li a::after {
     position: absolute;
     margin: 0;
     left: 70%;
-  }
+}
 
-  input{
-    flex-grow:2;
-  }
+input {
+    flex-grow: 2;
+}
 
-  .chatBox{
-      position: relative;
-    display:flex;
-    flex-direction:row;
-    bottom:5%;
+.chatBox {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    bottom: 5%;
     left: 15%;
-    position: fixed; 
+    position: fixed;
     width: 50%;
-  }
+}
 
-  #sendText{
+#sendText {
     font-size: 20px;
     font-weight: 800;
     border-radius: 5px;
     color: #ffffff83;
     border: none;
     background: rgb(238, 3, 249);
-    background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%); 
-  }
+    background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%);
+}
 
-  .mesgChat{
-      width: 40%;
-  }
+.mesgChat {
+    width: 40%;
+}
 
-  .nameDisplay{
+.nameDisplay {
     color: #ffffff;
     font-family: 'Mukta', sans-serif;
     text-align: center;
-    margin-bottom:-20px;
-  }
+    margin-bottom: -20px;
+}
 
-  .score{
+.score {
     color: #ffffff;
     font-family: 'Mukta', sans-serif;
-    text-align: center;  
-  }
+    text-align: center;
+}
 
-  .gg-close {
+.gg-close {
     box-sizing: border-box;
     position: relative;
     display: block;
-    transform: scale(var(--ggs,1));
+    transform: scale(var(--ggs, 1));
     width: 22px;
     height: 22px;
     border: 2px solid transparent;
     border-radius: 40px
 }
-.gg-close::after,
-.gg-close::before {
+
+.gg-close::after, .gg-close::before {
     content: "";
     display: block;
     box-sizing: border-box;
@@ -319,22 +317,21 @@ ul li a::after {
     top: 8px;
     left: 1px
 }
+
 .gg-close::after {
     transform: rotate(-45deg)
 }
 
-
-.logout{
+.logout {
     float: right;
     margin-left: 78%;
 }
- 
 
-.profileImg{
+.profileImg {
     margin-top: 90%;
     margin-left: 20px;
     text-align: center;
-    background:  rgb(238, 3, 249);
+    background: rgb(238, 3, 249);
     border: 0.1em solid #ffb9f9;
     border-radius: 50%;
     box-shadow: 0.375em 0.375em 0 0 rgba(155, 36, 119, 0.37);
@@ -343,7 +340,7 @@ ul li a::after {
     box-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
 }
 
-.logoutImg{
+.logoutImg {
     height: 20px;
-    width:20px;
+    width: 20px;
 }
