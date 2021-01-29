@@ -170,7 +170,7 @@ nav li a {
 }
 
 nav li a:hover {
-    color: #ee03f9;
+    color: rgb(238, 3, 249);
     text-decoration: none;
     text-shadow: 0px 0px 8px rgba(229, 23, 195, 0.8);
 }
@@ -211,7 +211,7 @@ ul li a::after {
     width: 100%;
     top: 100%;
     left: 10px;
-    background: #ee03f9;
+    background: rgb(238, 3, 249);
     transition: transform 1s;
     transform: scaleX(0);
     transform-origin: right;
@@ -224,7 +224,7 @@ ul li a:hover::after {
 }
 
 a:active {
-    color: #ee03f9;
+    color: rgb(238, 3, 249);
     text-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
 }
 
@@ -237,7 +237,7 @@ a:active {
 
 #sendButton {
     font-family: 'Mukta', sans-serif;
-    color: #ffffff83;
+    color: rgba(255, 255, 255, 0.514);
     background: rgb(238, 3, 249);
     background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%);
     border: none;
@@ -332,7 +332,7 @@ input {
     margin-left: 20px;
     text-align: center;
     background: rgb(238, 3, 249);
-    border: 0.1em solid #ffb9f9;
+    border: 0.1em solid rgb(255, 185, 249);
     border-radius: 50%;
     box-shadow: 0.375em 0.375em 0 0 rgba(155, 36, 119, 0.37);
     height: 4em;
