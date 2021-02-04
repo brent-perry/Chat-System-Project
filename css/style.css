@@ -270,7 +270,7 @@ input {
     font-size: 20px;
     font-weight: 800;
     border-radius: 5px;
-    color: #ffffff83;
+    color: rgba(255, 255, 255, 0.514);
     border: none;
     background: rgb(238, 3, 249);
     background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%);
@@ -281,14 +281,14 @@ input {
 }
 
 .nameDisplay {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     font-family: 'Mukta', sans-serif;
     text-align: center;
     margin-bottom: -20px;
 }
 
 .score {
-    color: #ffffff;
+    color: rgb(255, 255, 255);
     font-family: 'Mukta', sans-serif;
     text-align: center;
 }
