@@ -1,18 +1,34 @@
 
+
 <div id="dash">
-    <img src="" class="logo" alt="logo">
-    <div class="profile">
-        <img src="" alt="profile picture">
+    <div class="containLeft">
+    <img src="" class="logo" alt="Drocsid">
+    <br></br>
+        <img src="" class="profileImg">
         <h2 class="nameDisplay">Name</h2>
-        <h3 class="score">Star</h3>
+        <p class="score">Score</p>
+        <div class="channelCurrent"></div>
     </div>
-</div>
-<nav>
+
+
+<div class="navDiv">
+    <nav>
     <ul class="nav-links nav-active">
-        <li><a href="/Channel">Channel</a></li>
-        <li><a href="/auth/logout">Logout</a></li>
+        <li><a href="/dashboard">Dashboard</a></li>
+        <li><a href="/channel">Channel</a></li>
+        <li class="logout"><a href=""><img src="logout.png" class="logoutImg"></a></li>
     </ul>
     <div class="burger toggle">
         <div class="menu-btn-burger"></div>
     </div>
 </nav>
+</div>
+</div>
+<div class="outer">
+<div class="chatBox">
+<form class="chat">
+  <input class="mesgChat" />
+  <button id="sendText">Send</button>
+</form>
+</div>
+</div>
