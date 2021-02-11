@@ -14,7 +14,7 @@ a {
     text-decoration: none;
 }
 
-#registerContainer {
+#guestContainer {
     margin: auto;
     position: relative;
     display: flex;
@@ -37,7 +37,7 @@ input {
     box-shadow: 10px 10px 20px -22px gray;
 }
 
-.registerFormWrapper {
+.guestWrapper {
     margin: 0;
     position: fixed;
     top: 50%;
@@ -57,7 +57,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     outline: 0 none;
 }
 
-#registerButton {
+/* #registerButton {
     font-family: 'Mukta', sans-serif;
     color: rgba(255, 255, 255, 0.514);
     background: rgb(238, 3, 249);
@@ -72,17 +72,18 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     position: absolute;
     margin: 0;
     left: 33%;
-}
+} */
 
-#registerButton:hover, #register:hover, #loginGuest:hover {
+/* #registerButton:hover, #register:hover,  */
+#loginGuest:hover {
     box-shadow: 0 10px 30px rgba(23, 71, 229, 0.075) inset, 0 5px 20px rgba(229, 23, 195, 0.8);
 }
 
-.registerTitle {
+.guestTitle {
     margin-left: 40%;
 }
-
-#loginButton {
+ 
+/*#loginButton {
     font-family: 'Mukta', sans-serif;
     color: rgba(255, 255, 255, 0.514);
     background: rgb(238, 3, 249);
@@ -101,7 +102,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
 
 #loginButton:hover {
     box-shadow: 0 10px 30px rgba(23, 71, 229, 0.075) inset, 0 5px 20px rgba(229, 23, 195, 0.8);
-}
+} */
 
 #loginGuest {
     font-family: 'Mukta', sans-serif;
@@ -120,7 +121,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     left: 33%;
 }
 
-#register {
+/* #register {
     font-family: 'Mukta', sans-serif;
     color: rgba(255, 255, 255, 0.514);
     background: rgb(238, 3, 249);
@@ -135,7 +136,7 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     position: absolute;
     margin: 0;
     left: 33%;
-}
+} */
 
 .nav-links {
     margin-right: 5%;
@@ -322,10 +323,10 @@ input {
     transform: rotate(-45deg)
 }
 
-.logout {
+/* .logout {
     float: right;
     margin-left: 78%;
-}
+} */
 
 .profileImg {
     margin-top: 90%;
@@ -340,7 +341,7 @@ input {
     box-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
 }
 
-.logoutImg {
+/* .logoutImg {
     height: 20px;
     width: 20px;
-}
+} */
