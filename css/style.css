@@ -35,6 +35,14 @@ input {
 }
 
 .guestWrapper {
+    margin: 0;
+    position: fixed;
+    top: 50%;
+    height: 80%;
+    width: 60%;
+    left: 20%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
     background-color: rgba(34, 39, 51, 0.42);
     box-shadow: 5px 5px 30px rgb(20, 20, 20);
     border-radius: 8px;
