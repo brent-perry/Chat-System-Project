@@ -1,34 +1,22 @@
-
-
-<div id="dash">
-    <div class="containLeft">
-    <img src="" class="logo" alt="Drocsid">
-    <br></br>
+<div id="mainWrapper">
+    <div id="navDiv">
+        <img src="" class="logo" alt="Drocsid">
+        <nav>
+            <ul class="nav-links nav-active">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li><a href="/channel">Channel</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div id="containLeft">
         <img src="" class="profileImg">
         <h2 class="nameDisplay">Name</h2>
-        {{!-- <p class="score">Score</p> --}}
         <div class="channelCurrent"></div>
     </div>
-
-
-<div class="navDiv">
-    <nav>
-    <ul class="nav-links nav-active">
-        <li><a href="/dashboard">Dashboard</a></li>
-        <li><a href="/channel">Channel</a></li>
-        {{!-- <li class="logout"><a href=""><img src="logout.png" class="logoutImg"></a></li> --}}
-    </ul>
-    <div class="burger toggle">
-        <div class="menu-btn-burger"></div>
-    </div>
-</nav>
 </div>
-</div>
-<div class="outer">
 <div class="chatBox">
-<form class="chat">
-  <input class="mesgChat" />
-  <button id="sendText">Send</button>
-</form>
-</div>
+    <form class="chat">
+        <input class="mesgChat" />
+        <button id="sendText">Send</button>
+    </form>
 </div>
