@@ -9,31 +9,31 @@ const {create_chat_message} = require('../../lib/messages/client/chat');
     socket.binaryType = "arraybuffer";
 
     socket.onopen = function(){
-      if (DEV) {
+      if (DEV){
         console.log('connection open');
       };
     };
 
     socket.onclose = function(){
-      if (DEV) {
+      if (DEV){
         console.log('connection closed');
       };
     };
 
     socket.onerror = function(error){
-      if (DEV) {
+      if (DEV){
         console.log(error);
       };
     };
 
     socket.onmessage = function (message){
-      if (DEV) {
+      if (DEV){
         console.log('recieved message', message);
       };
     };
 
     export function sendChat(username,message){
-      if (typeof username !== "string") {
+      if (typeof username !== "string"){
         throw new Error('Username is not a string');
       }
       else if(typeof message !== "string"){
