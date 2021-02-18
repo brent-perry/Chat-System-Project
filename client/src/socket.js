@@ -41,6 +41,6 @@ const {create_chat_message} = require('../../lib/messages/client/chat');
       }
       else {
         let packet = create_chat_message(username, message);
-        socket.send(packet.buffer)
+        socket.send(packet.buffer);
       }
     }
