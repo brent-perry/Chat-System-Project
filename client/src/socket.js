@@ -39,7 +39,7 @@ const {create_chat_message} = require('../../lib/messages/client/chat');
       else if(typeof message !== "string"){
         throw new Error('Message is not a string');
       }
-      else {
+      else{
         let packet = create_chat_message(username, message);
         socket.send(packet.buffer);
       }
