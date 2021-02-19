@@ -1,7 +1,6 @@
 'use strict';
 
-import {test} from './buttonFunctions/buttons';
+import {enableThemes} from './js/theme';
 
-test();
-
+enableThemes();
 

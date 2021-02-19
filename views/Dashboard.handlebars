@@ -1,15 +1,27 @@
 <div id="mainWrapper">
     <div id="navDiv">
-        <img src="" class="logo" alt="Drocsid">
         <nav>
             <ul class="nav-links nav-active">
-                <li><a href="/dashboard">Dashboard</a></li>
-                <li><a href="/channel">Channel</a></li>
+                <div id="logoContainer">
+                    <div class="logo"></div>
+                    <h1>Drocsid</h1>
+                </div>
+                <li id="dashboardTitle"><a href="/dashboard">Dashboard</a></li>
+                <li id="channelTitle"><a href="/channel">Channel</a></li>
+                <div id="themesContainer">
+                    <div class="themes" data-theme="default" id="defaultTheme">Default</div>
+                    <div class="themes" data-theme="space" id="spaceTheme">Space</div>
+                    <div class="themes" data-theme="jungle" id="jungleTheme">Jungle</div>
+                    <div class="themes" data-theme="medieval" id="medievalTheme">Medieval</div>
+                    <div class="themes" data-theme="urban" id="urbanTheme">Urban</div>
+                    <div class="themes" data-theme="food" id="foodTheme">Food</div>
+                    <div class="themes" data-theme="ocean" id="oceanTheme">Ocean</div>
+                </div>
             </ul>
         </nav>
     </div>
     <div id="containLeft">
-        <img src="" class="profileImg">
+        <img src="/images/funny_profile.jpg" class="profileImg">
         <h2 class="nameDisplay">Name</h2>
         <div class="channelCurrent"></div>
     </div>
@@ -17,6 +29,6 @@
 <div class="chatBox">
     <form class="chat">
         <input class="mesgChat" />
-        <button id="sendText">Send</button>
+        <a id="sendText">Send</a>
     </form>
 </div>
