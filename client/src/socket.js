@@ -29,7 +29,7 @@ const {client_packet_reader} = require('../../util/client_packet_reader');
     socket.onmessage = function (message){
       if (DEV){
           let client_message = client_packet_reader(message);
-        console.log(client_message);
+        console.log("message");
       };//packet.read
     };
 
