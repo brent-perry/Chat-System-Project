@@ -27,8 +27,9 @@ const {create_chat_message} = require('../../lib/messages/client/chat');
     };
 
     socket.onmessage = function (message){
+        const Packet = require('../../lib/packet');
       if (DEV){
-        console.log('recieved message', message);
+        console.log(Packet.read);
       };
     };
 
