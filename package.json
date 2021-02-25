@@ -11,11 +11,14 @@
     "ws": "^7.4.2"
   },
   "devDependencies": {
+    "chai": "^4.3.0",
+    "mocha": "^8.3.0",
+    "nyc": "^15.1.0",
     "webpack": "^5.18.0",
     "webpack-cli": "^4.4.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nyc mocha",
     "start": "nodemon --ignore './client' app.js",
     "build": "webpack --mode=production",
     "watch": "webpack --watch --mode=development"
@@ -24,7 +27,7 @@
     "type": "git",
     "url": "git+https://github.com/brent-perry/Chat-System-Project.git"
   },
-  "author": "",
+  "author": "Drocsid Team",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/brent-perry/Chat-System-Project/issues"

@@ -16,3 +16,4 @@ node_modules/
 .eslintcache
 .env
 /client/dist/*
+.nyc_output/
