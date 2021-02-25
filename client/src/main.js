@@ -6,7 +6,7 @@ enableThemes();
 
 import {sendChat} from './socket';
 
-import {test} from './buttonFunctions/buttons';
+//import {test} from './buttonFunctions/buttons';
 
 window.sendChat = sendChat;
 
