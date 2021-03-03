@@ -578,6 +578,22 @@ body.ocean nav li a:hover {
     text-shadow: 0px 0px 8px rgba(17, 14, 247, 0.8);
 }
 
+body.ocean #sendText {
+    background: rgb(17, 14, 247);
+}
+
+body.ocean .profileImg {
+    background: rgb(17, 14, 247);
+    border: 0.1em solid rgb(17, 14, 247);
+    box-shadow: 0px 0px 10px rgba(17, 14, 247, 0.8);
+}
+
+body.ocean nav li a:hover {
+    color: rgb(17, 14, 247);
+    text-decoration: none;
+    text-shadow: 0px 0px 8px rgba(17, 14, 247, 0.8);
+}
+
 body.ocean ul li a::after {
     background: rgb(17, 14, 247);
     box-shadow: 0px 0px 10px rgba(17, 14, 247, 0.8);
