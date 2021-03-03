@@ -8,5 +8,6 @@ import {sendChat} from './socket';
 
 window.sendChat = sendChat;
 
+enableThemes();
 
 test();
