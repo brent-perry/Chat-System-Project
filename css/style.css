@@ -313,27 +313,61 @@ a:active {
 
 /* for all the buttons to be icons */
 
-/* #spaceTheme {
-    background image here for icon
+#defaultTheme {
+    background-color: rgb(99, 11, 139);
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    border-radius: 50%;
+}
+
+#spaceTheme {
+    background-image: url("/images/space.svg");
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    border-radius: 50%;
 }
 
 #jungleTheme {
-    background image here for icon
+    background-image: url("/images/jungle.svg");
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    border-radius: 50%;
 }
 
 #medievalTheme {
-   background image here for icon
+    background-image: url("/images/space.svg");
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    border-radius: 50%;
 }
 
 #urbanTheme {
-   background image here for icon
+    background-image: url("/images/urban.svg");
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    border-radius: 50%;
 }
 
 #foodTheme {
-   background image here for icon}
+    background-image: url("/images/food.svg");
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    border-radius: 50%;
+}
 
 #oceanTheme {
-   background image here for icon */
+    background-image: url("/images/ocean.png");
+    height: 60px;
+    width: 60px;
+    background-size: contain;
+    border-radius: 50%;
+}
 
 /* changing the themes to what design we are wanting. use location wanting to change attached with theme. */
 
@@ -377,7 +411,7 @@ body.space #themesContainer {
 /* style for all the jungle theme items */
 
 body.jungle {
-    background-color: rgb(1, 155, 1);
+    background-image: url("/images/jungle.svg");
 }
 
 body.jungle #sendText {
@@ -501,7 +535,7 @@ body.food #themesContainer {
 /* style for all the ocean theme items */
 
 body.ocean {
-    background-image: url("/images/sharkattack.png");
+    background-image: url("/images/ocean.png");
 }
 
 body.ocean #sendText {
