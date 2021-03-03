@@ -27,10 +27,11 @@ const {client_packet_reader} = require('../../util/client_packet_reader');
     };
 
     socket.onmessage = function (message){
-        let client_message = client_packet_reader(message);
+        const client_message = client_packet_reader(message);
       if (DEV){
+
         console.log(message);
-      };
+      };//username+": "+message
     };
 
     export function sendChat(username,message){
