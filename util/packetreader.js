@@ -14,8 +14,6 @@ function packet_reader(buffer, server, client){
       server.clients.forEach((item, i) =>{
         item.send(packet.buffer)
       });
-
   }
 }
-
 module.exports = {packet_reader};

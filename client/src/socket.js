@@ -1,7 +1,7 @@
 'use strict';
 
 const {create_chat_message} = require('../../lib/messages/client/chat');
-
+const {client_packet_reader} = require('../../util/client_packet_reader');
 
     const DEV = true;
 
@@ -27,8 +27,9 @@ const {create_chat_message} = require('../../lib/messages/client/chat');
     };
 
     socket.onmessage = function (message){
+        client_packet_reader(message);
       if (DEV){
-        console.log('recieved message', message);
+         console.log(client_packet_reader(message));
       };
     };
 
