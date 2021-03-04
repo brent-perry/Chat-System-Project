@@ -1,7 +1,11 @@
 'use strict';
 
-import {test} from './buttonFunctions/buttons';
+import {enableThemes} from './js/theme';
 
-test();
+enableThemes();
 
+import {sendChat} from './socket';
 
+window.sendChat = sendChat;
+
+enableThemes();
