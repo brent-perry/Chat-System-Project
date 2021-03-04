@@ -182,6 +182,9 @@ a:active {
 .conversationBox {
     color: rgb(255, 255, 255);
     padding: 20px;
+    border-radius: 8px;
+    margin: 4px;
+    border: 1px solid rgb(163, 1, 163);
 }
 
 #conversationText {
@@ -205,15 +208,15 @@ a:active {
 }
 
 .messageBox {
-    width: 100%;
     bottom: 0;
     margin-bottom: 2em;
     position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .chat {
     display: flex;
-    justify-content: center;
 }
 
 #sendText {
@@ -410,6 +413,9 @@ body.default #defaultTheme {
     box-shadow: 0px 0px 10px rgba(252, 13, 192, 0.8);
 }
 
+body.default .conversationBox {
+    border: 1px solid rgb(163, 1, 163);
+}
 /* style for all the space theme items */
 
 body.space {
@@ -442,6 +448,9 @@ body.space #spaceTheme {
     box-shadow: 0px 0px 10px rgba(233, 118, 204, 0.8);
 }
 
+body.space .conversationBox {
+    border: 1px solid rgb(233, 118, 204);
+}
 /* style for all the jungle theme items */
 
 body.jungle {
@@ -474,6 +483,9 @@ body.jungle #jungleTheme {
     box-shadow: 0px 0px 10px rgba(45, 240, 6, 0.8);
 }
 
+body.jungle .conversationBox {
+    border: 1px solid rgb(45, 240, 6);
+}
 /* style for all the medieval theme items */
 
 body.medieval {
@@ -506,6 +518,9 @@ body.medieval #medievalTheme {
     box-shadow: 0px 0px 10px rgba(228, 30, 4, 0.8);
 }
 
+body.medieval .conversationBox {
+    border: 1px solid rgb(228, 30, 4);
+}
 /* style for all the urban theme items */
 
 body.urban {
@@ -538,6 +553,9 @@ body.urban #urbanTheme {
     box-shadow: 0px 0px 10px rgba(229, 215, 23, 0.8);
 }
 
+body.urban .conversationBox {
+    border: 1px solid rgb(241, 207, 11);
+}
 /* style for all the food theme items */
 
 body.food {
@@ -570,6 +588,9 @@ body.food #foodTheme {
     box-shadow: 0px 0px 10px rgba(235, 5, 74, 0.8);
 }
 
+body.food .conversationBox {
+    border: 1px solid rgb(235, 5, 74);
+}
 /* style for all the ocean theme items */
 
 body.ocean {
@@ -616,4 +637,8 @@ body.ocean ul li a::after {
 body.ocean #oceanTheme {
     border: 0.1em solid rgb(17, 14, 247);
     box-shadow: 0px 0px 10px rgba(17, 14, 247, 0.8);
+}
+
+body.ocean .conversationBox {
+    border: 1px solid rgb(12, 49, 214);
 }
