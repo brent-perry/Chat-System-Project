@@ -60,18 +60,18 @@ const {client_packet_reader} = require('../../util/client_packet_reader');
     on: function(event,callback){
       if(!listeners[event]){
         listeners[event] = [];
-      };
+      }
       listeners[event].push(callback);
     },
     off: function(event,callback){
       if(!listeners[event]){
         return false;
-      };
+      }
       let index = listeners[event].indexOf(callback);
       if (index !== -1){
           listeners[event].slice(1,index);
           return true;
-        };
+        }
       return false;
-    };
+    }
   };
