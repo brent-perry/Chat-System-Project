@@ -11,7 +11,7 @@ var sendMesg = document.getElementById('sendText');
 var convoBox = document.getElementById("conversationBoxWrapper");
 
 sendMesg.addEventListener('click', function(){
-  sendChat('Julian', msgInfo.value);
+  chat_socket.sendChat('Julian', msgInfo.value);
   msgInfo.value = '';
 });
 

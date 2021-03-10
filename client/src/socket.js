@@ -43,7 +43,14 @@ const {client_packet_reader} = require('../../util/client_packet_reader');
         emit(packetObj.packetType,packetObj);
     };
 
-    export function sendChat(username,message){
+  export const chat_socket = {
+    on: function(event,callback){
+      if(!listeners[event]){
+        listeners[event] = [];
+      }
+      listeners[event].push(callback);
+    },
+    sendChat: function(username, message){
       if (typeof username !== "string"){
         throw new Error('Username is not a string');
       }
@@ -54,14 +61,6 @@ const {client_packet_reader} = require('../../util/client_packet_reader');
         let packet = create_chat_message(username, message);
         socket.send(packet.buffer);
       }
-    };
-
-  export const chat_socket = {
-    on: function(event,callback){
-      if(!listeners[event]){
-        listeners[event] = [];
-      }
-      listeners[event].push(callback);
     },
     off: function(event,callback){
       if(!listeners[event]){
