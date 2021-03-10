@@ -53,7 +53,7 @@ const {client_packet_reader} = require('../../util/client_packet_reader');
       else{
         let packet = create_chat_message(username, message);
         socket.send(packet.buffer);
-      };
+      }
     };
 
   export const chat_socket = {
