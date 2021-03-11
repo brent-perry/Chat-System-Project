@@ -2,6 +2,7 @@
 
 const Packet = require('../lib/packet');
 const {CHAT_MESSAGE} = require('../lib/messages/client/chat');
+const authObj = require('../lib/messages/client/authentication');
 
 
 function client_packet_reader(buffer){
@@ -13,6 +14,9 @@ function client_packet_reader(buffer){
         console.log(username+": "+message);
         let packetInfo = {packetUsername: username, packetMessage: message, packetType: packet_type};
         return packetInfo;
+     }
+     else if (packet_type === authObj.AUTHENITCATE_STATUS_OKAY){
+
      }
 
 }
