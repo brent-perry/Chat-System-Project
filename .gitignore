@@ -17,3 +17,4 @@ node_modules/
 .env
 /client/dist/*
 .nyc_output/
+dump.rdb
