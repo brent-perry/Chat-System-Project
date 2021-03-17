@@ -6,7 +6,7 @@ const {subscriber} = require('../lib/redis');
 const {binaryStringToBuffer} = require('./buffer_strings');
 
 function initServer(server){
-  var socket_server = new WebSocket.Server({ server });
+  let socket_server = new WebSocket.Server({ server });
 
   subscriber.on('pmessage',(pattern,channel,binaryString) =>{
     if (pattern === 'chat:*'){

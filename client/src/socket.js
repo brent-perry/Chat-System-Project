@@ -15,32 +15,32 @@ const {create_join_channel_packet} = require('../../lib/messages/client/channel'
       if (listeners[event]){
       listeners[event].forEach(listener => listener(data));
       }
-    };
+    }
 
     socket.onopen = function(){
       if (DEV){
         console.log('connection open');
-      };
+      }
       emit("open");
     };
 
     socket.onclose = function(){
       if (DEV){
         console.log('connection closed');
-      };
+      }
       emit("close");
     };
 
     socket.onerror = function(error){
       if (DEV){
         console.log(error);
-      };
+      }
       emit("error",error);
     };
 
     socket.onmessage = function (message){
         //client_packet_reader(message);
-        var packetObj = client_packet_reader(message);
+        let packetObj = client_packet_reader(message);
         emit(packetObj.packetType,packetObj);
     };
 
