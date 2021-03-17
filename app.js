@@ -6,4 +6,4 @@ if (cluster.isMaster){
     cluster.fork();
 } else {
   require('./worker');
-};
+}
