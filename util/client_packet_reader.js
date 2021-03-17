@@ -14,7 +14,7 @@ function client_packet_reader(buffer){
         let packetInfo = {packetUsername: username, packetMessage: message, packetType: packet_type};
         return packetInfo;
      }
-     else if (packet_type === authObj.AUTHENITCATE_STATUS_OKAY){
+     else if (packet_type === authObj.AUTHENTICATE_STATUS_OKAY){
 
      }
 

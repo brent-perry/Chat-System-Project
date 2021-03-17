@@ -43,12 +43,12 @@ function packet_reader(buffer, server, client){
         });
       }
       else{
-        let outgoingPacket = authObj.create_auth_fail(authObj.AUTHENITCATE_STATUS_FORMAT_ERROR);
+        let outgoingPacket = authObj.create_auth_fail(authObj.AUTHENTICATE_STATUS_FORMAT_ERROR);
         client.send(outgoingPacket.buffer);
         break;
       }
       if (usernameTaken){
-        let outgoingPacket = authObj.create_auth_fail(authObj.AUTHENITCATE_STATUS_NAME_TAKEN);
+        let outgoingPacket = authObj.create_auth_fail(authObj.AUTHENTICATE_STATUS_NAME_TAKEN);
         client.send(outgoingPacket.buffer);
         break;
       }
