@@ -10,14 +10,14 @@ function initServer(server){
 
   subscriber.on('pmessage',(pattern,channel,binaryString) =>{
     if (pattern === 'chat:*'){
-      const user_channel = channel.substr(5);
-      if (!user_channel){
+      const userChannel = channel.substr(5);
+      if (!userChannel){
         console.log('Got empty user channel, weird. Discarding message');
         return;
       }
       const arrayBuffer = binaryStringToBuffer(binaryString);
       socket_server.clients.forEach(client =>{
-          if (client.channel === user_channel)
+          if (client.channel === userChannel)
             client.send(arrayBuffer);
         });
     }
@@ -25,11 +25,11 @@ function initServer(server){
 
   subscriber.psubscribe('chat:*');
 
-  socket_server.on('connection', ws => {
+  socket_server.on('connection', ws =>{
     console.log('New connection');
     ws.binaryType = "arraybuffer";
 
-    ws.on('message', message => {
+    ws.on('message', message =>{
       console.log('Received message', message);
       packet_reader(message, socket_server, ws);
     });

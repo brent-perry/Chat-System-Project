@@ -4,13 +4,13 @@ const { publisher } = require('../lib/redis');
 const {bufferToBinaryString,binaryStringToBuffer} = require('./buffer_strings');
 const Packet = require('../lib/packet');
 const {CHAT_MESSAGE} = require('../lib/messages/client/chat');
-const {JOIN_CHANNEL} = require('../lib/messages/client/channel')
+const {JOIN_CHANNEL} = require('../lib/messages/client/channel');
 const authObj = require('../lib/messages/client/authentication');
 
 function packet_reader(buffer, server, client){
   const packet = new Packet(buffer);
   const pId = packet.read_uint8();
-  switch (pId) {
+  switch (pId){
     case JOIN_CHANNEL:
       let channel = packet.read_string();
       if (channel.length > 20){
@@ -35,7 +35,7 @@ function packet_reader(buffer, server, client){
     case authObj.AUTHENTICATE_RESPONSE:
       let authUsername = packet.read_string();
       let usernameTaken = false;
-      if (typeof username === 'string' && authUsername.length < 20) {
+      if (typeof username === 'string' && authUsername.length < 20){
         server.clients.forEach((item, i) =>{
           if (item.username == authUsername){
             usernameTaken = true;
