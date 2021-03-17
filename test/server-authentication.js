@@ -15,11 +15,11 @@ describe('create_auth_request() function', function(){
 
 describe('create_auth_fail() function', function(){
   it('Should return a packet with the corresponding uint8 telling what kind of packet it is and another uint8 saying that the request failed', function(){
-    let packet = auth.create_auth_fail(auth.AUTHENITCATE_STATUS_FORMAT_ERROR);
+    let packet = auth.create_auth_fail(auth.AUTHENTICATE_STATUS_FORMAT_ERROR);
     packet.reset();
     assert.equal(3, packet.length());
-    assert.equal(auth.AUTHENITCATE_STATUS, packet.read_uint8());
-    assert.equal(auth.AUTHENITCATE_STATUS_FAIL, packet.read_uint8());
+    assert.equal(auth.AUTHENTICATE_STATUS, packet.read_uint8());
+    assert.equal(auth.AUTHENTICATE_STATUS_FAIL, packet.read_uint8());
     assert.equal(auth.AUTHENTICATE_STATUS_FORMAT_ERROR, packet.read_uint8());
   });
 });
@@ -29,7 +29,7 @@ describe('create_auth_okay() function', function(){
     let packet = auth.create_auth_okay();
     packet.reset();
     assert.equal(2, packet.length());
-    assert.equal(auth.AUTHENITCATE_STATUS, packet.read_uint8());
-    assert.equal(auth.AUTHENITCATE_STATUS_OKAY, packet.read_uint8());
+    assert.equal(auth.AUTHENTICATE_STATUS, packet.read_uint8());
+    assert.equal(auth.AUTHENTICATE_STATUS_OKAY, packet.read_uint8());
   });
 });
