@@ -8,14 +8,22 @@ const {binaryStringToBuffer} = require('./buffer_strings');
 function initServer(server){
   var socket_server = new WebSocket.Server({ server });
 
-  subscriber.on('message',(channel,binaryString) => {
-    if (channel === 'chat'){
+  subscriber.on('pmessage',(pattern,channel,binaryString) =>{
+    if (pattern === 'chat:*'){
+      const user_channel = channel.substr(5);
+      if (!user_channel){
+        console.log('Got empty user channel, weird. Discarding message');
+        return;
+      }
       const arrayBuffer = binaryStringToBuffer(binaryString);
-      socket_server.clients.forEach(client => client.send(arrayBuffer));
-    };
+      socket_server.clients.forEach(client =>{
+          if (client.channel === user_channel)
+            client.send(arrayBuffer);
+        });
+    }
   });
 
-  subscriber.subscribe('chat');
+  subscriber.psubscribe('chat:*');
 
   socket_server.on('connection', ws => {
     console.log('New connection');

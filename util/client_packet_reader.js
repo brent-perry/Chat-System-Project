@@ -11,7 +11,6 @@ function client_packet_reader(buffer){
     if (packet_type === CHAT_MESSAGE){
         var username = packet.read_string();
         var message = packet.read_string();
-        console.log(username+": "+message);
         let packetInfo = {packetUsername: username, packetMessage: message, packetType: packet_type};
         return packetInfo;
      }
