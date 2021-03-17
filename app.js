@@ -4,6 +4,7 @@ const cores = require('os').cpus().length;
 if (cluster.isMaster){
   for (let i = 0; i < cores; ++i)
     cluster.fork();
-} else {
+}
+else{
   require('./worker');
 }
