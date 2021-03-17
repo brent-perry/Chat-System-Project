@@ -6,13 +6,13 @@ const {subscriber} = require('../lib/redis');
 const {binaryStringToBuffer} = require('./buffer_strings');
 
 function initServer(server){
-  var socket_server = new WebSocket.Server({ server });
+  let socket_server = new WebSocket.Server({ server });
 
   subscriber.on('message',(channel,binaryString) => {
     if (channel === 'chat'){
       const arrayBuffer = binaryStringToBuffer(binaryString);
       socket_server.clients.forEach(client => client.send(arrayBuffer));
-    };
+    }
   });
 
   subscriber.subscribe('chat');
