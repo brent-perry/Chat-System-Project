@@ -11,9 +11,10 @@ channelSelector();
 var msgInfo = document.getElementsByClassName('mesgChat')[0];
 var sendMesg = document.getElementById('sendText');
 var convoBox = document.getElementById("conversationBoxWrapper");
+var username = 'Julian';
 
 sendMesg.addEventListener('click', function(){
-  chat_socket.sendChat('Julian', msgInfo.value);
+  chat_socket.sendChat(username, msgInfo.value);
   msgInfo.value = '';
 });
 
