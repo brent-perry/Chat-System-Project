@@ -2,7 +2,7 @@
 
 export function enableThemes(){
     let themeButtons = document.querySelectorAll('#themesContainer .themes');
-    themeButtons.forEach(button => button.addEventListener('click', clickThemeButton))
+    themeButtons.forEach(button => button.addEventListener('click', clickThemeButton));
 }
 
 let currentTheme = 'default';
@@ -23,6 +23,6 @@ themesButton.addEventListener("click", event =>{
         themeContent.classList.remove("show");
     else
         themeContent.classList.add("show");
-})
+});
 
 
