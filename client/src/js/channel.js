@@ -15,7 +15,7 @@ function currentChannel(){
         channelButtons[i].classList.remove('selectedChannel');
     }
     this.classList.add('selectedChannel');
-    // chat_socket.joinChannel(currentChannel);
+    chat_socket.joinChannel(currentChannel);
 };
 
     let channelDrop = document.getElementById("channelTitle");

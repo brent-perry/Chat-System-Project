@@ -11,14 +11,23 @@ channelSelector();
 var msgInfo = document.getElementsByClassName('mesgChat')[0];
 var sendMesg = document.getElementById('sendText');
 var convoBox = document.getElementById("conversationBoxWrapper");
+var chatForm = document.querySelector("form.chat");
 var username = 'Julian';
 
-sendMesg.addEventListener('click', function(){
+function submitChat(event){
+  event.preventDefault();
+  if (!msgInfo.value.length)
+    return;
   chat_socket.sendChat(username, msgInfo.value);
   msgInfo.value = '';
-});
+  }
+
+sendMesg.addEventListener('click', submitChat);
+chatForm.addEventListener('submit', submitChat);
 
 chat_socket.on("error",console.error);
+
+chat_socket.on("open",() => chat_socket.joinChannel('lobby'));
 
 chat_socket.on(CHAT_MESSAGE,function(packetObj){
   var conversationBox = document.createElement("DIV");
