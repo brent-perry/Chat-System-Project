@@ -9,15 +9,19 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    overflow-y:hidden;
+    overflow-y: hidden;
 }
 
 h1 {
     color: rgb(255, 255, 255);
 }
 
-a {
+.a {
     text-decoration: none;
+}
+
+.a:hover {
+    cursor: pointer;
 }
 
 #guestContainer {
@@ -85,12 +89,12 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     padding-right: 1em;
 }
 
-nav ul {
+nav .ul {
     display: flex;
     justify-content: center;
 }
 
-nav li {
+nav .li {
     list-style: none;
     margin: 20px;
 }
@@ -99,7 +103,7 @@ nav li {
     margin-right: auto;
 }
 
-nav li a {
+nav .li .a {
     margin-top: 1.4em;
     color: rgba(190, 190, 190, 0.404);
     text-decoration: none;
@@ -111,7 +115,7 @@ nav li a {
     -webkit-text-stroke-color: rgba(73, 73, 73, 0.616);
 }
 
-nav li a:hover {
+nav .li .a:hover {
     color: rgb(238, 3, 249);
     text-decoration: none;
     text-shadow: 0px 0px 8px rgba(229, 23, 195, 0.8);
@@ -146,7 +150,7 @@ nav li a:hover {
     box-shadow: 10px 10px 20px -22px rgb(128, 128, 128);
 }
 
-ul li a::after {
+.ul .li .a::after {
     position: absolute;
     content: "";
     height: 3px;
@@ -160,12 +164,12 @@ ul li a::after {
     box-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
 }
 
-ul li a:hover::after {
+.ul .li .a:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
 
-a:active {
+.a:active {
     color: rgb(238, 3, 249);
     text-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
 }
@@ -195,9 +199,9 @@ a:active {
     color: rgb(255, 255, 255);
     font-size: 18px;
     font-weight: 800;
-    font-family:'Mukta', sans-serif;
+    font-family: 'Mukta', sans-serif;
     margin: 15px;
-    max-height:100%;
+    max-height: 100%;
     box-sizing: border-box;
 }
 
@@ -247,15 +251,7 @@ a:active {
 
 #sendText:hover {
     cursor: pointer;
-    box-shadow:
-    inset 0 0 60px rgb(245, 245, 245),
-    inset 20px 0 80px rgb(255, 0, 255),
-    inset -20px 0 80px rgb(0, 255, 255),
-    inset 20px 0 300px rgb(255, 0, 255),
-    inset -20px 0 300px rgb(0, 255, 255),
-    0 0 50px rgb(255, 255, 255),
-    -10px 0 80px rgb(255, 0, 255),
-    10px 0 80px rgb(0, 255, 255);
+    box-shadow: inset 0 0 60px rgb(245, 245, 245), inset 20px 0 80px rgb(255, 0, 255), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(255, 0, 255), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(255, 0, 255), 10px 0 80px rgb(0, 255, 255);
 }
 
 .nameDisplay {
@@ -318,14 +314,30 @@ a:active {
     margin: 2px;
 }
 
-.logo:hover{
-    -webkit-animation:spin 4s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 4s linear infinite;
+.logo:hover {
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
 }
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
 
 #logoContainer {
     margin-top: 0.6em;
@@ -359,15 +371,15 @@ a:active {
 
 #themesDropdownButton {
     color: rgba(190, 190, 190, 0.404);
-text-decoration: none;
-font-weight: bold;
-font-size: 20px;
-letter-spacing: 3px;
-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.336);
--webkit-text-stroke-width: 1px;
--webkit-text-stroke-color: rgba(73, 73, 73, 0.616);
-margin-top: 1em;
-margin-right: 2.7em;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.336);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(73, 73, 73, 0.616);
+    margin-top: 1em;
+    margin-right: 2.7em;
 }
 
 .themes:hover, #themesDropdownButton:hover {
@@ -376,7 +388,6 @@ margin-right: 2.7em;
     color: rgb(238, 3, 249);
     text-decoration: none;
     text-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
-    
 }
 
 #themesContainer.show {
@@ -396,7 +407,7 @@ margin-right: 2.7em;
     background-size: contain;
     border-radius: 50%;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
 
 #spaceTheme {
@@ -406,7 +417,7 @@ margin-right: 2.7em;
     background-size: contain;
     border-radius: 50%;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
 
 #jungleTheme {
@@ -416,7 +427,7 @@ margin-right: 2.7em;
     background-size: contain;
     border-radius: 50%;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
 
 #medievalTheme {
@@ -426,7 +437,7 @@ margin-right: 2.7em;
     background-size: contain;
     border-radius: 50%;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
 
 #urbanTheme {
@@ -436,7 +447,7 @@ margin-right: 2.7em;
     background-size: contain;
     border-radius: 50%;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
 
 #foodTheme {
@@ -455,7 +466,7 @@ margin-right: 2.7em;
     background-size: contain;
     border-radius: 50%;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
 
 /* changing the themes to what design we are wanting. use location wanting to change attached with theme. */
@@ -474,6 +485,7 @@ body.default #defaultTheme {
 body.default .conversationBox {
     border: 1px solid rgb(163, 1, 163);
 }
+
 /* style for all the space theme items */
 
 body.space {
@@ -490,13 +502,13 @@ body.space .profileImg {
     box-shadow: 0px 0px 10px rgba(233, 118, 204, 0.8);
 }
 
-body.space nav li a:hover {
+body.space nav .li .a:hover {
     color: rgb(233, 118, 204);
     text-decoration: none;
     text-shadow: 0px 0px 8px rgba(233, 118, 204, 0.8);
 }
 
-body.space ul li a::after {
+body.space .ul .li .a::after {
     background: rgb(233, 118, 204);
     box-shadow: 0px 0px 10px rgba(233, 118, 204, 0.8);
 }
@@ -507,14 +519,15 @@ body.space #spaceTheme {
 }
 
 body.space .conversationBox {
-    background: linear-gradient(90deg, rgba(238,3,249,1) 14%, rgba(171,17,243,1) 50%, rgba(98,32,237,1) 100%);
+    background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%);
     opacity: 0.8;
 }
+
 /* style for all the jungle theme items */
 
 body.jungle {
     background-image: url("/images/jungle.svg");
-    background-position: left; 
+    background-position: left;
 }
 
 body.jungle #sendText {
@@ -527,13 +540,13 @@ body.jungle .profileImg {
     box-shadow: 0px 0px 10px rgb(182, 244, 146);
 }
 
-body.jungle nav li a:hover {
+body.jungle nav .li .a:hover {
     color: rgb(182, 244, 146);
     text-decoration: none;
     text-shadow: 0px 0px 8px rgb(182, 244, 146);
 }
 
-body.jungle ul li a::after {
+body.jungle .ul .li .a::after {
     background: rgb(182, 244, 146);
     box-shadow: 0px 0px 10px rgb(182, 244, 146);
 }
@@ -547,81 +560,84 @@ body.jungle .conversationBox {
     background-image: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
     opacity: 0.8;
 }
+
 /* style for all the medieval theme items */
 
 body.medieval {
     background-image: url("/images/dagon.png");
-    background-position: left; 
+    background-position: left;
 }
 
 body.medieval #sendText {
-    background-image: linear-gradient( 109.6deg, rgba(5,84,94,1) 16%, #bbb 91.1% );
+    background-image: linear-gradient( 109.6deg, rgba(5, 84, 94, 1) 16%, #bbb 91.1%);
 }
 
 body.medieval .profileImg {
-    background: rgba(5,84,94,1);
-    border: 0.1em solid rgba(5,84,94,1);
-    box-shadow: 0px 0px 10px rgba(5,84,94,1);
+    background: rgba(5, 84, 94, 1);
+    border: 0.1em solid rgba(5, 84, 94, 1);
+    box-shadow: 0px 0px 10px rgba(5, 84, 94, 1);
 }
 
-body.medieval nav li a:hover {
-    color: rgba(5,84,94,1);
+body.medieval nav .li .a:hover {
+    color: rgba(5, 84, 94, 1);
     text-decoration: none;
-    text-shadow: 0px 0px 8px rgba(5,84,94,1);
+    text-shadow: 0px 0px 8px rgba(5, 84, 94, 1);
 }
 
-body.medieval ul li a::after {
-    background: rgba(5,84,94,1);
-    box-shadow: 0px 0px 10px rgba(5,84,94,1);
+body.medieval .ul .li .a::after {
+    background: rgba(5, 84, 94, 1);
+    box-shadow: 0px 0px 10px rgba(5, 84, 94, 1);
 }
 
 body.medieval #medievalTheme {
-    border: 0.1em solid rgba(5,84,94,1);
-    box-shadow: 0px 0px 10px rgba(5,84,94,1);
+    border: 0.1em solid rgba(5, 84, 94, 1);
+    box-shadow: 0px 0px 10px rgba(5, 84, 94, 1);
 }
 
 body.medieval .conversationBox {
-    background-image: linear-gradient( 109.6deg, rgba(5,84,94,1) 16%, #bbb 91.1% );
+    background-image: linear-gradient( 109.6deg, rgba(5, 84, 94, 1) 16%, #bbb 91.1%);
     opacity: 0.8;
 }
+
 /* style for all the urban theme items */
 
-body.urban{
+body.urban {
     background-image: url("/images/urban.svg");
-    background-position: center top; 
+    background-position: center top;
 }
 
 body.urban #sendText {
-    background-image: linear-gradient( 109.6deg,  rgba(253,199,141,1) 11.3%, rgba(249,143,253,1) 100.2% );
+    background-image: linear-gradient( 109.6deg, rgba(253, 199, 141, 1) 11.3%, rgba(249, 143, 253, 1) 100.2%);
 }
 
 body.urban .profileImg {
-    background: rgba(249,143,253,1);
-    border: 0.1em solid rgba(249,143,253,1);
-    box-shadow: 0px 0px 10px rgba(249,143,253,1);
+    background: rgba(249, 143, 253, 1);
+    border: 0.1em solid rgba(249, 143, 253, 1);
+    box-shadow: 0px 0px 10px rgba(249, 143, 253, 1);
 }
 
-body.urban nav li a:hover {
-    color: rgba(249,143,253,1);
+body.urban nav .li .a:hover {
+    color: rgba(249, 143, 253, 1);
     text-decoration: none;
-    text-shadow: 0px 0px 8px rgba(249,143,253,1);
+    text-shadow: 0px 0px 8px rgba(249, 143, 253, 1);
 }
 
-body.urban ul li a::after {
-    background: rgba(249,143,253,1);
-    box-shadow: 0px 0px 10px rgba(249,143,253,1);
+body.urban .ul .li .a::after {
+    background: rgba(249, 143, 253, 1);
+    box-shadow: 0px 0px 10px rgba(249, 143, 253, 1);
 }
 
 body.urban #urbanTheme {
-    border: 0.1em solid rgba(249,143,253,1);
-    box-shadow: 0px 0px 10px rgba(249,143,253,1);
+    border: 0.1em solid rgba(249, 143, 253, 1);
+    box-shadow: 0px 0px 10px rgba(249, 143, 253, 1);
 }
 
 body.urban .conversationBox {
     border: 1px solid rgb(241, 207, 11);
-    background-image: linear-gradient( 109.6deg,  rgba(253,199,141,1) 11.3%, rgba(249,143,253,1) 100.2% );
+    background-image: linear-gradient( 109.6deg, rgba(253, 199, 141, 1) 11.3%, rgba(249, 143, 253, 1) 100.2%);
     opacity: 0.8;
 }
+
 /* style for all the food theme items */
 
 body.food {
@@ -638,13 +654,13 @@ body.food .profileImg {
     box-shadow: 0px 0px 10px rgba(235, 5, 74, 0.8);
 }
 
-body.food nav li a:hover {
+body.food nav .li .a:hover {
     color: rgb(235, 5, 74);
     text-decoration: none;
     text-shadow: 0px 0px 8px rgba(235, 5, 74, 0.8);
 }
 
-body.food ul li a::after {
+body.food .ul .li .a::after {
     background: rgb(235, 5, 74);
     box-shadow: 0px 0px 10px rgba(235, 5, 74, 0.8);
 }
@@ -657,6 +673,7 @@ body.food #foodTheme {
 body.food .conversationBox {
     border: 1px solid rgb(235, 5, 74);
 }
+
 /* style for all the ocean theme items */
 
 body.ocean {
@@ -664,48 +681,64 @@ body.ocean {
 }
 
 body.ocean #sendText {
-    background: rgba(149,245,211,1);
+    background: rgba(149, 245, 211, 1);
 }
 
 body.ocean .profileImg {
-    background: rgba(149,245,211,1);
-    border: 0.1em solid rgba(149,245,211,1);
-    box-shadow: 0px 0px 10px rgba(149,245,211,1);
+    background: rgba(149, 245, 211, 1);
+    border: 0.1em solid rgba(149, 245, 211, 1);
+    box-shadow: 0px 0px 10px rgba(149, 245, 211, 1);
 }
 
-body.ocean nav li a:hover {
+body.ocean nav .li .a:hover {
     color: rgb(17, 14, 247);
     text-decoration: none;
     text-shadow: 0px 0px 8px rgba(17, 14, 247, 0.8);
 }
 
 body.ocean #sendText {
-    background: linear-gradient( 110.5deg,  rgba(71,114,148,1) 14.9%, rgba(149,245,211,1) 77.9% );
+    background: linear-gradient( 110.5deg, rgba(71, 114, 148, 1) 14.9%, rgba(149, 245, 211, 1) 77.9%);
 }
 
 body.ocean .profileImg {
-    background: rgba(149,245,211,1);
-    border: 0.1em solid rgba(149,245,211,1);
-    box-shadow: 0px 0px 10px rgba(149,245,211,1);
+    background: rgba(149, 245, 211, 1);
+    border: 0.1em solid rgba(149, 245, 211, 1);
+    box-shadow: 0px 0px 10px rgba(149, 245, 211, 1);
 }
 
-body.ocean nav li a:hover {
-    color: rgba(149,245,211,1);
+body.ocean nav .li .a:hover {
+    color: rgba(149, 245, 211, 1);
     text-decoration: none;
-    text-shadow: 0px 0px 8px rgba(149,245,211,1);
+    text-shadow: 0px 0px 8px rgba(149, 245, 211, 1);
 }
 
-body.ocean ul li a::after {
-    background: rgba(149,245,211,1);
-    box-shadow: 0px 0px 10px rgba(149,245,211,1);
+body.ocean .ul .li .a::after {
+    background: rgba(149, 245, 211, 1);
+    box-shadow: 0px 0px 10px rgba(149, 245, 211, 1);
 }
 
 body.ocean #oceanTheme {
-    border: 0.1em solid rgba(149,245,211,1);
-    box-shadow: 0px 0px 10px rgba(149,245,211,1);
+    border: 0.1em solid rgba(149, 245, 211, 1);
+    box-shadow: 0px 0px 10px rgba(149, 245, 211, 1);
 }
 
 body.ocean .conversationBox {
-    border: 1px solid rgba(149,245,211,1);
-    background: linear-gradient( 110.5deg,  rgba(71,114,148,1) 14.9%, rgba(149,245,211,1) 77.9% );
+    border: 1px solid rgb(12, 49, 214);
+    border: 1px solid rgba(149, 245, 211, 1);
+    background: linear-gradient( 110.5deg, rgba(71, 114, 148, 1) 14.9%, rgba(149, 245, 211, 1) 77.9%);
+}
+
+.channels {
+    border: solid 1px rgb(232, 3, 240);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.channels>div {
+    padding: 4px;
+}
+
+.selectedChannel {
+    background-color: rgb(240, 125, 144);
+    border-radius: 8px;
 }

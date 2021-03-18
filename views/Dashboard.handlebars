@@ -1,12 +1,23 @@
 <div id="mainWrapper">
     <div id="navDiv">
         <nav>
-            <ul class="nav-links nav-active">
+            <div class="nav-links nav-active ul">
                 <div id="logoContainer">
                     <div class="logo"></div>
                 </div>
-                <li id="dashboardTitle"><a href="/dashboard">Dashboard</a></li>
-                <li id="channelTitle"><a href="/channel">Channel</a></li>
+                <div class="li" id="dashboardTitle">
+                    <div class="a">Dashboard</div>
+                </div>
+                <div class="li" id="channelTitle">
+                    <div class="a" id="channelContainer">
+                        Channel
+                        <div class="channels">
+                            <div class="channel">Lobby</div>
+                            <div class="channel">Fun</div>
+                            <div class="channel">Work</div>
+                        </div>
+                    </div>
+                </div>
                 <div id="themesDropdownContainer">
                     <div id="themesDropdownButton">Themes</div>
                     <div id="themesContainer" class="themeContent">
@@ -19,7 +30,7 @@
                         <div class="themes" data-theme="ocean" id="oceanTheme"></div>
                     </div>
                 </div>
-            </ul>
+            </div>
         </nav>
     </div>
     <div id="containLeft">
@@ -29,11 +40,10 @@
     </div>
     <div id="conversationBoxWrapper">
         <div class="messageBox">
-    <form class="chat">
-        <input class="mesgChat" />
-        <div id="sendText">Send</div>
-    </form>
-</div>
+            <form class="chat">
+                <input class="mesgChat" />
+                <div id="sendText">Send</div>
+            </form>
+        </div>
     </div>
 </div>
-
