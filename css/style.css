@@ -16,8 +16,8 @@ h1 {
     color: rgb(255, 255, 255);
 }
 
-.a {
-    text-decoration: none;
+.a:hover {
+    cursor: pointer;
 }
 
 .a:hover {
@@ -115,7 +115,7 @@ nav .li .a {
     -webkit-text-stroke-color: rgba(73, 73, 73, 0.616);
 }
 
-nav .li .a:hover {
+nav .li .a p:hover {
     color: rgb(238, 3, 249);
     text-decoration: none;
     text-shadow: 0px 0px 8px rgba(229, 23, 195, 0.8);
@@ -361,7 +361,7 @@ nav .li .a:hover {
     flex-direction: column;
     align-items: center;
     color: rgb(255, 255, 255);
-    margin-right: 2em;
+    margin-right: 3em;
     right: 0;
 }
 
@@ -369,7 +369,7 @@ nav .li .a:hover {
     margin: 10px;
 }
 
-#themesDropdownButton {
+#themesDropdownButton p {
     color: rgba(190, 190, 190, 0.404);
     text-decoration: none;
     font-weight: bold;
@@ -728,17 +728,35 @@ body.ocean .conversationBox {
     background: linear-gradient( 110.5deg, rgba(71, 114, 148, 1) 14.9%, rgba(149, 245, 211, 1) 77.9%);
 }
 
+p {
+    margin-bottom: 0;
+    padding-bottom: 6px;
+}
+
 .channels {
     border: solid 1px rgb(232, 3, 240);
     border-radius: 8px;
     padding: 4px;
+    display: none;
+    background-color: rgb(80, 35, 206);
+    z-index: 999;
+}
+
+#channelContainer:hover .channels {
+    display: inline-block;
+    position: absolute;
 }
 
 .channels>div {
     padding: 4px;
 }
 
+.channel:hover {
+    background-color: rgb(107, 247, 107);
+    border-radius: 8px;
+}
+
 .selectedChannel {
-    background-color: rgb(240, 125, 144);
+    background-color: rgb(107, 247, 107);
     border-radius: 8px;
 }
