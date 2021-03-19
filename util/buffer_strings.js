@@ -1,3 +1,5 @@
+'use strict';
+
 //TODO: add unit tests
 // Easy way to write a test is to convert a readable string to its code points. See:
 // http://www.asciitable.com

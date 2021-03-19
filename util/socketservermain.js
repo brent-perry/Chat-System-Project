@@ -11,7 +11,7 @@ function initServer(server){
   subscriber.on('pmessage',(pattern,channel,binaryString) =>{
     if (pattern === 'chat:*'){
       const userChannel = channel.substr(5);
-      if (!userChannel){
+      if (!userChannel || !workChannel || !funChannel){
         console.log('Got empty user channel, weird. Discarding message');
         return;
       }
@@ -22,8 +22,39 @@ function initServer(server){
         });
     }
   });
+  subscriber.on('pmessage',(pattern, channel, binaryString) => {
+    if (pattern === 'Work*') {
+      const workChannel = channel.substr(5);
+      if (!userChannel || !workChannel || !funChannel) {
+        console.log('Got empty user channel, weird. Discarding message');
+        return;
+    }
+    const arrayBuffer = binaryStringToBuffer(binaryString);
+    socket_server.clients.forEach(client => {
+      if (client.channel === workChannel)
+        client.send(arrayBuffer);
+    });
+  }
+  });
+
+  subscriber.on('pmessage',(pattern, channel, binaryString) => {
+    if (pattern === 'Fun*') {
+      const funChannel = channel.substr(5);
+      if (!userChannel || !workChannel || !funChannel) {
+        console.log('Got empty user channel, weird. Discarding message');
+        return;
+      }
+      const arrayBuffer = binaryStringToBuffer(binaryString);
+      socket_server.clients.forEach(client => {
+        if (client.channel === funChannel)
+          client.send(arrayBuffer);
+      });
+    }
+  });
 
   subscriber.psubscribe('chat:*');
+  subscriber.psubscribe('Work*');
+  subscriber.psubscribe('Fun*');
 
   socket_server.on('connection', ws =>{
     console.log('New connection');
