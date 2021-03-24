@@ -45,6 +45,7 @@ const {create_join_channel_packet} = require('../../lib/messages/client/channel'
     };
 
   export const chat_socket = {
+    username: "",
     on: function(event,callback){
       if(!listeners[event]){
         listeners[event] = [];
@@ -62,6 +63,7 @@ const {create_join_channel_packet} = require('../../lib/messages/client/channel'
       if (typeof username !== "string" || !username){
         throw new Error('Username is not a string or empty');
       }
+      chat_socket.username = username;
       let packet = create_auth_response(username);
       socket.send(packet.buffer);
     },

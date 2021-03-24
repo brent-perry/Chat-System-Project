@@ -18,7 +18,7 @@ function submitChat(event){
   event.preventDefault();
   if (!msgInfo.value.length)
     return;
-  chat_socket.sendChat(username, msgInfo.value);
+  chat_socket.sendChat(chat_socket.username, msgInfo.value);
   msgInfo.value = '';
   }
 
