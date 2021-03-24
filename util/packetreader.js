@@ -32,7 +32,7 @@ function packet_reader(buffer, server, client){
       publisher.publish(`chat:${user_channel}`,binaryString);
       break;
 
-    case authObj.AUTHENTICATE_RESPONSE:
+    case authObj.AUTHENTICATE_REQUEST:
       let authUsername = packet.read_string();
       let usernameTaken = false;
       if (typeof authUsername === 'string' && authUsername.length < 20){
