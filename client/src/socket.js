@@ -3,6 +3,7 @@
 const {create_chat_message} = require('../../lib/messages/client/chat');
 const {client_packet_reader} = require('../../util/client_packet_reader');
 const {create_join_channel_packet} = require('../../lib/messages/client/channel');
+const {create_auth_response} = require('../../lib/messages/client/authentication');
 
     const DEV = true;
 
@@ -40,7 +41,7 @@ const {create_join_channel_packet} = require('../../lib/messages/client/channel'
 
     socket.onmessage = function (message){
         //client_packet_reader(message);
-        let packetObj = client_packet_reader(message);
+        let packetObj = client_packet_reader(message,emit);
         emit(packetObj.packetType,packetObj);
     };
 
@@ -60,7 +61,7 @@ const {create_join_channel_packet} = require('../../lib/messages/client/channel'
       socket.send(packet.buffer);
     },
     sendUsername: function(username){
-      if (typeof username !== "string" || !username){
+      if (typeof username !== "string" || username.length < 1){
         throw new Error('Username is not a string or empty');
       }
       chat_socket.username = username;
