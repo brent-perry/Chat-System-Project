@@ -2,6 +2,7 @@
 
 const {create_chat_message} = require('../../lib/messages/client/chat');
 const {client_packet_reader} = require('../../util/client_packet_reader');
+const {create_join_channel_packet} = require('../../lib/messages/client/channel');
 
     const DEV = true;
 
@@ -44,11 +45,27 @@ const {client_packet_reader} = require('../../util/client_packet_reader');
     };
 
   export const chat_socket = {
+    username: "",
     on: function(event,callback){
       if(!listeners[event]){
         listeners[event] = [];
       }
       listeners[event].push(callback);
+    },
+    joinChannel: function(channel){
+      if (typeof channel !== "string" || !channel){
+        throw new Error('Channel is not a string or empty');
+      }
+      let packet = create_join_channel_packet(channel);
+      socket.send(packet.buffer);
+    },
+    sendUsername: function(username){
+      if (typeof username !== "string" || !username){
+        throw new Error('Username is not a string or empty');
+      }
+      chat_socket.username = username;
+      let packet = create_auth_response(username);
+      socket.send(packet.buffer);
     },
     sendChat: function(username, message){
       if (typeof username !== "string"){
@@ -74,3 +91,6 @@ const {client_packet_reader} = require('../../util/client_packet_reader');
       return false;
     }
   };
+
+if (DEV)
+  window.chat_socket = chat_socket;

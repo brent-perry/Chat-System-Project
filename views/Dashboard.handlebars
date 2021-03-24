@@ -1,14 +1,34 @@
 <div id="mainWrapper">
     <div id="navDiv">
         <nav>
-            <ul class="nav-links nav-active">
+            <div class="nav-links nav-active ul">
                 <div id="logoContainer">
                     <div class="logo"></div>
                 </div>
-                <li id="dashboardTitle"><a href="/dashboard">Dashboard</a></li>
-                <li id="channelTitle"><a href="/channel">Channel</a></li>
+                <div class="li" id="loginGuest">Login
+                </div>
+                <div id="guestContainer">
+                    <div class="guestWrapper">
+                        <h1 class="guestTitle">Guest</h1>
+                        <form id="guestForm" method="POST">
+                            <input type="text" placeholder="Display Name">
+                        </form>
+                    </div>
+                </div>
+                <div class="li" id="channelTitle">
+                    <div class="a" id="channelContainer">
+                        <p>Channel</p>
+                        <div class="channels">
+                            <div class="channel">Lobby</div>
+                            <div class="channel">Fun</div>
+                            <div class="channel">Work</div>
+                        </div>
+                    </div>
+                </div>
                 <div id="themesDropdownContainer">
-                    <div id="themesDropdownButton">Themes</div>
+                    <div id="themesDropdownButton">
+                        <p>Themes</p>
+                    </div>
                     <div id="themesContainer" class="themeContent">
                         <div class="themes" data-theme="default" id="defaultTheme"></div>
                         <div class="themes" data-theme="space" id="spaceTheme"></div>
@@ -19,7 +39,7 @@
                         <div class="themes" data-theme="ocean" id="oceanTheme"></div>
                     </div>
                 </div>
-            </ul>
+            </div>
         </nav>
     </div>
     <div id="containLeft">
@@ -31,7 +51,14 @@
         </div>
     </div>
     <div id="conversationBoxWrapper">
+        <div class="messageBox">
+            <form class="chat">
+                <input class="mesgChat" />
+                <div id="sendText">Send</div>
+            </form>
+        </div>
     </div>
+<<<<<<< HEAD
     <div class="messageBox">
     <form class="chat">
 <!-- <input class="mesgChat" /> -->
@@ -41,3 +68,6 @@
 </div>
 </div>
 
+=======
+</div>
+>>>>>>> main
