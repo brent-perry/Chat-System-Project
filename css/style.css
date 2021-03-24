@@ -130,12 +130,12 @@ nav li {
   @keyframes conversationUser{
     0%,
     100% {
-      text-shadow: 0 0 1px #fffbfa, 0 0 3px #df16fa, 0 0 10px #fa16b6, 0 0 10px #16dffa, 0 0 .4px #28fefe, .5px .5px .1px #41899b;
-      color: #fe28ec;
+      text-shadow: 0 0 1px rgb(255, 251, 250), 0 0 3px rgb(223, 22, 250), 0 0 10px rgb(250, 22, 182), 0 0 10px rgb(22, 223, 250), 0 0 .4px rgb(42, 254, 254), .5px .5px .1px rgb(65, 137, 155);
+      color: rgb(254, 40, 236);
     }
     50% {
-      text-shadow: 0 0 .5px #f691ff, 0 0 1.5px #c554a3, 0 0 5px #a318a3, 0 0 5px #84408d, 0 0 .2px #0b7280, .5px .5px .1px #0a402e;
-      color: #42c6ca;
+      text-shadow: 0 0 .5px rgb(246, 145, 255), 0 0 1.5px rgb(197, 84, 163), 0 0 5px rgb(163, 24, 163), 0 0 5px rgb(132, 64, 141), 0 0 .2px rgb(11, 114, 128), .5px .5px .1px rgb(10, 64, 46);
+      color: rgb(66, 198, 202);
     }
   }
   
