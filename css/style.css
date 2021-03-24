@@ -2,6 +2,10 @@
     font-family: 'Mukta', sans-serif;
 }
 
+a {
+    text-decoration: none;
+}
+
 body {
     background-color: rgb(23, 28, 38);
     margin: 0;
@@ -25,8 +29,13 @@ h1 {
 }
 
 #guestContainer {
+    display: none;
     margin-top: 20em;
     justify-content: center;
+    position: absolute;
+}
+
+#guestContainer.showLogin {
     display: flex;
 }
 

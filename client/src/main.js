@@ -4,15 +4,16 @@ import {CHAT_MESSAGE} from '../../lib/messages/client/chat';
 import {enableThemes} from './js/theme';
 import {channelSelector} from './js/channel';
 import {sendChat,chat_socket} from './socket';
+import {guestLogin} from './js/guest';
 
 enableThemes();
 channelSelector();
+guestLogin();
 
-var msgInfo = document.getElementsByClassName('mesgChat')[0];
-var sendMesg = document.getElementById('sendText');
-var convoBox = document.getElementById("conversationBoxWrapper");
-var chatForm = document.querySelector("form.chat");
-var username = 'Julian';
+let msgInfo = document.getElementsByClassName('mesgChat')[0];
+let sendMesg = document.getElementById('sendText');
+let convoBox = document.getElementById("conversationBoxWrapper");
+let chatForm = document.querySelector("form.chat");
 
 function submitChat(event){
   event.preventDefault();
@@ -30,12 +31,12 @@ chat_socket.on("error",console.error);
 chat_socket.on("open",() => chat_socket.joinChannel('lobby'));
 
 chat_socket.on(CHAT_MESSAGE,function(packetObj){
-  var conversationBox = document.createElement("DIV");
+  let conversationBox = document.createElement("DIV");
   conversationBox.classList.add("conversationBox");
-  var usernameSpan = document.createElement("SPAN");
+  let usernameSpan = document.createElement("SPAN");
   usernameSpan.classList.add("conversationUser");
   usernameSpan.textContent = packetObj.packetUsername + ": ";
-  var messageSpan = document.createElement("SPAN");
+  let messageSpan = document.createElement("SPAN");
   messageSpan.classList.add("conversationText");
   messageSpan.textContent = packetObj.packetMessage;
   conversationBox.appendChild(usernameSpan);
