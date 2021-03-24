@@ -40,8 +40,7 @@ const {create_auth_response} = require('../../lib/messages/client/authentication
     };
 
     socket.onmessage = function (message){
-        //client_packet_reader(message);
-        let packetObj = client_packet_reader(message,emit);
+        let packetObj = client_packet_reader(message);
         emit(packetObj.packetType,packetObj);
     };
 
