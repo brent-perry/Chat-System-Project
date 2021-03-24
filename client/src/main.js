@@ -14,6 +14,9 @@ let msgInfo = document.getElementsByClassName('mesgChat')[0];
 let sendMesg = document.getElementById('sendText');
 let convoBox = document.getElementById("conversationBoxWrapper");
 let chatForm = document.querySelector("form.chat");
+let guestUsername = document.getElementById('guestUsername');
+let loginButton = document.getElementById('loginButton');
+let guestForm = document.getElementById('guestForm');
 
 function submitChat(event){
   event.preventDefault();
@@ -23,8 +26,22 @@ function submitChat(event){
   msgInfo.value = '';
   }
 
+function submitUsername(event){
+  event.preventDefault();
+  if (guestUsername.value.length < 1) {
+    return;
+  }
+  chat_socket.sendUsername(guestUsername.value);
+}
+
 sendMesg.addEventListener('click', submitChat);
 chatForm.addEventListener('submit', submitChat);
+loginButton.addEventListener('click', submitUsername);
+guestForm.addEventListener('submit', submitUsername);
+
+chat_socket.on("auth_okay",() =>{
+
+});
 
 chat_socket.on("error",console.error);
 
