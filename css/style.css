@@ -38,6 +38,20 @@ input {
     box-shadow: 10px 10px 20px -22px rgb(128, 128, 128);
 }
 
+textarea{
+    border-radius: 8px;
+    background-color: rgba(53, 53, 53, 0.467);
+    color: rgb(255, 255, 255);
+    font-size: 18px;
+    outline: 0 none;
+    border-color: rgba(78, 69, 70, 0.075);
+    padding: 5px;
+    margin: 10px;
+    box-shadow: 10px 10px 20px -22px rgb(128, 128, 128);
+    box-sizing: border-box;
+    height: auto;
+}
+
 .guestWrapper {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
@@ -98,6 +112,34 @@ nav li {
 #channelTitle {
     margin-right: auto;
 }
+
+.conversationUser{
+    font-weight: bold;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    background:rgba(0, 0, 0, 0);
+
+}
+
+.conversationUser {
+    animation: conversationUser 5s ease infinite;
+    -moz-animation: conversationUser 5s ease infinite;
+    -webkit-animation: conversationUser 5s ease infinite;
+  }
+  
+  @keyframes conversationUser{
+    0%,
+    100% {
+      text-shadow: 0 0 1px #fffbfa, 0 0 3px #df16fa, 0 0 10px #fa16b6, 0 0 10px #16dffa, 0 0 .4px #28fefe, .5px .5px .1px #41899b;
+      color: #fe28ec;
+    }
+    50% {
+      text-shadow: 0 0 .5px #f691ff, 0 0 1.5px #c554a3, 0 0 5px #a318a3, 0 0 5px #84408d, 0 0 .2px #0b7280, .5px .5px .1px #0a402e;
+      color: #42c6ca;
+    }
+  }
+  
+
 
 nav li a {
     margin-top: 1.4em;
@@ -178,11 +220,21 @@ a:active {
     box-shadow: 10px 10px 20px -22px rgb(128, 128, 128);
     border-radius: 8px;
     margin-top: 4em;
-    height: 70%;
+    height: 60%;
     text-align: justify;
     word-break: break-all;
     overflow: scroll;
     overflow-x: hidden;
+    box-shadow:
+    inset 0 0 60px rgb(245, 245, 245),
+    inset 20px 0 80px rgb(255, 0, 255),
+    inset -20px 0 80px rgb(0, 255, 255),
+    inset 20px 0 300px rgb(255, 0, 255),
+    inset -20px 0 300px rgb(0, 255, 255),
+    0 0 50px rgb(255, 255, 255),
+    -10px 0 80px rgb(255, 0, 255),
+    10px 0 80px rgb(0, 255, 255);
+    scroll-behavior: smooth;
 }
 
 .conversationBox {
@@ -193,15 +245,16 @@ a:active {
     border: 1px solid rgba(255, 255, 255, 0.308);
     max-height: 500px;
     color: rgb(255, 255, 255);
-    font-size: 18px;
-    font-weight: 800;
     font-family:'Mukta', sans-serif;
     margin: 15px;
     max-height:100%;
     box-sizing: border-box;
+    
 }
 
 #conversationText {
+    font-size: 16px;
+    font-weight: 500;
     margin-left: 2em;
 }
 
@@ -221,13 +274,10 @@ a:active {
     left: 70%;
 }
 
-.messageBox {
-    bottom: 0;
-    margin-bottom: 2em;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 0;
+.messageBox{
+    position: absolute;
+    bottom: 2%;
+    left: 25%;
 }
 
 .chat {
@@ -510,6 +560,10 @@ body.space .conversationBox {
     background: linear-gradient(90deg, rgba(238,3,249,1) 14%, rgba(171,17,243,1) 50%, rgba(98,32,237,1) 100%);
     opacity: 0.8;
 }
+
+body.space #conversationBoxWrapper{
+    box-shadow: inset 0 0 60px rgb(245, 245, 245), inset 20px 0 80px rgb(255, 0, 255), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(255, 0, 255), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(255, 0, 255), 10px 0 80px rgb(0, 255, 255);
+}
 /* style for all the jungle theme items */
 
 body.jungle {
@@ -545,7 +599,11 @@ body.jungle #jungleTheme {
 
 body.jungle .conversationBox {
     background-image: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
-    opacity: 0.8;
+    max-width: 100%;
+}
+
+body.jungle #conversationBoxWrapper{
+    box-shadow: inset 0 0 60px rgb(245, 245, 245), inset 20px 0 80px rgb(182, 244, 146), inset -20px 0 80px rgb(51, 139, 147), inset 20px 0 300px rgb(182, 244, 146), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(182, 244, 146), 10px 0 80px rgb(182, 244, 146);
 }
 /* style for all the medieval theme items */
 
@@ -581,8 +639,12 @@ body.medieval #medievalTheme {
 }
 
 body.medieval .conversationBox {
-    background-image: linear-gradient( 109.6deg, rgba(5,84,94,1) 16%, #bbb 91.1% );
+    background-image: linear-gradient( 109.6deg, rgba(5,84,94,1) 16%, rgb(187, 187, 187) 91.1% );
     opacity: 0.8;
+}
+
+body.medieval #conversationBoxWrapper{
+    box-shadow: inset 0 0 60px rgb(45, 87, 80), inset 20px 0 80px rgb(90, 130, 139), inset -20px 0 80px rgba(5,84,94,1), inset 20px 0 300px rgb(255, 164, 164), inset -20px 0 300px rgba(5,84,94,1), 0 0 50px rgba(5,84,94,1), -10px 0 80px rgb(158, 207, 219), 10px 0 80px rgb(180, 221, 226);
 }
 /* style for all the urban theme items */
 
@@ -619,8 +681,12 @@ body.urban #urbanTheme {
 
 body.urban .conversationBox {
     border: 1px solid rgb(241, 207, 11);
-    background-image: linear-gradient( 109.6deg,  rgba(253,199,141,1) 11.3%, rgba(249,143,253,1) 100.2% );
+    background-image: linear-gradient( 109.6deg,  rgba(253,199,141,1) 11.3%, rgba(253,199,141,1) 100.2% );
     opacity: 0.8;
+}
+
+body.urban #conversationBoxWrapper{
+    box-shadow: inset 0 0 60px rgb(245, 245, 245), inset 20px 0 80px rgba(249,143,253,1), inset -20px 0 80px rgba(249,143,253,1), inset 20px 0 300px rgba(253,199,141,1), inset -20px 0 300px rgba(253,199,141,1), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgba(253,199,141,1), 10px 0 80px rgba(253,199,141,1);
 }
 /* style for all the food theme items */
 
@@ -708,4 +774,8 @@ body.ocean #oceanTheme {
 body.ocean .conversationBox {
     border: 1px solid rgba(149,245,211,1);
     background: linear-gradient( 110.5deg,  rgba(71,114,148,1) 14.9%, rgba(149,245,211,1) 77.9% );
+}
+
+body.ocean #conversationBoxWrapper{
+    box-shadow: inset 0 0 60px rgb(245, 245, 245), inset 20px 0 80px rgb(154, 255, 225), inset -20px 0 80px rgb(143, 150, 253), inset 20px 0 300px rgb(141, 217, 253), inset -20px 0 300px rgb(143, 141, 253), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(141, 203, 253), 10px 0 80px rgb(141, 212, 253);
 }
