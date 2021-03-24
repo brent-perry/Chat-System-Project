@@ -5,7 +5,7 @@ const {CHAT_MESSAGE} = require('../lib/messages/client/chat');
 const authObj = require('../lib/messages/client/authentication');
 
 
-function client_packet_reader(buffer){
+function client_packet_reader(buffer,emit){
     const packet = new Packet(buffer.data);
     const packet_type = packet.read_uint8();
     if (packet_type === CHAT_MESSAGE){
@@ -15,7 +15,7 @@ function client_packet_reader(buffer){
         return packetInfo;
      }
      else if (packet_type === authObj.AUTHENTICATE_STATUS_OKAY){
-
+      emit("auth_okay");
      }
 
 }
