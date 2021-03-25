@@ -1,6 +1,7 @@
 'use strict';
 
 import {CHAT_MESSAGE} from '../../lib/messages/client/chat';
+import {AUTHENTICATE_STATUS,AUTHENTICATE_STATUS_OKAY} from '../../lib/messages/client/authentication';
 import {enableThemes} from './js/theme';
 import {channelSelector} from './js/channel';
 import {sendChat,chat_socket} from './socket';
@@ -39,8 +40,11 @@ chatForm.addEventListener('submit', submitChat);
 loginButton.addEventListener('click', submitUsername);
 guestForm.addEventListener('submit', submitUsername);
 
-chat_socket.on("auth_okay",() =>{
-
+chat_socket.on(AUTHENTICATE_STATUS,packetObj =>{
+  if (packetObj.authStatus === AUTHENTICATE_STATUS_OKAY){
+    let guestContainer = document.getElementById("guestContainer");
+    guestContainer.style.display = 'none';
+  }
 });
 
 chat_socket.on("error",console.error);
