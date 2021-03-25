@@ -17,24 +17,37 @@ function packet_reader(buffer, server, client){
       if (channel.length > 20){
         throw new Error('Channel length exceeds 20 characters!');
       }
+      channel = channel.toLowerCase();
       console.log(`client joined channel: ${channel}`);
       if (client.channel && client.username) {
         publisher.lrem(`userlist:${client.channel}`, 1, client.username);
       }
       client.channel = channel;
-      if (client.username) {
-        publisher.rpush(`userlist:${client.channel}`, client.username);
-      }
-      publisher.lrange(`userlist:${client.channel}`, 0, -1, (error, userList) =>{
-        if (error) {
-          console.error(error);
+      publisher.lrange(`chat_history:${channel}`,0,-1,(error,messages) =>{
+          if (error){
+            console.error(error);
+          }
+          if (messages && messages.length){
+            messages.reverse();
+            for (let index = 0 ; index < messages.length ; ++index){
+              let arrayBuffer = binaryStringToBuffer(messages[index]);
+              client.send(arrayBuffer);
+            }
+          }
+        });
+        if (client.username) {
+          publisher.rpush(`userlist:${client.channel}`, client.username);
         }
-        else{
-          console.log(userList);
-          let usersPacket = create_user_list_packet(userList);
-          client.send(usersPacket.buffer);
-        }
-      });
+        publisher.lrange(`userlist:${client.channel}`, 0, -1, (error, userList) =>{
+          if (error) {
+            console.error(error);
+          }
+          else{
+            console.log(userList);
+            let usersPacket = create_user_list_packet(userList);
+            client.send(usersPacket.buffer);
+          }
+        });
       break;
 
     case CHAT_MESSAGE:
@@ -42,10 +55,17 @@ function packet_reader(buffer, server, client){
         console.log("client tried to send message but has not joined a channel");
         break; // TODO send error that client should join channel first
       }
+      if (!client.username){
+        console.log("client tried to send message but has no username");
+        break; // TODO send error that client should join channel first
+      }
       let username = packet.read_string();
       let message = packet.read_string();
       let user_channel = client.channel;
       let binaryString = bufferToBinaryString(packet.buffer);
+      publisher.lpush(`chat_history:${user_channel}`,binaryString,() =>{
+        publisher.ltrim(`chat_history:${user_channel}`,0,199);
+        });
       publisher.publish(`chat:${user_channel}`,binaryString);
       break;
 

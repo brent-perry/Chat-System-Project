@@ -3,14 +3,14 @@
 import {CHAT_MESSAGE} from '../../lib/messages/client/chat';
 import {AUTHENTICATE_STATUS,AUTHENTICATE_STATUS_OKAY} from '../../lib/messages/client/authentication';
 import {enableThemes} from './js/theme';
-import {channelSelector} from './js/channel';
+import {channelSelector,channelButton} from './js/channel';
 import {sendChat,chat_socket} from './socket';
 import {guestLogin} from './js/guest';
 import {USER_LIST} from '../../lib/messages/server/users';
 
 enableThemes();
 channelSelector();
-guestLogin();
+channelButton();
 
 let msgInfo = document.getElementsByClassName('mesgChat')[0];
 let sendMesg = document.getElementById('sendText');
