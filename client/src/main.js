@@ -5,7 +5,6 @@ import {AUTHENTICATE_STATUS,AUTHENTICATE_STATUS_OKAY} from '../../lib/messages/c
 import {enableThemes} from './js/theme';
 import {channelSelector,channelButton} from './js/channel';
 import {sendChat,chat_socket} from './socket';
-import {guestLogin} from './js/guest';
 import {USER_LIST} from '../../lib/messages/server/users';
 
 enableThemes();
