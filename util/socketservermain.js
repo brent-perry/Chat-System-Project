@@ -35,7 +35,7 @@ function initServer(server){
     });
 
     ws.on('close', () =>{
-      if (ws.channel && ws.username) {
+      if (ws.channel && ws.username){
         publisher.lrem(`userlist:${ws.channel}`, 1, ws.username);
       }
     })

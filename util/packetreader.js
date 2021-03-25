@@ -19,7 +19,7 @@ function packet_reader(buffer, server, client){
       }
       channel = channel.toLowerCase();
       console.log(`client joined channel: ${channel}`);
-      if (client.channel && client.username) {
+      if (client.channel && client.username){
         publisher.lrem(`userlist:${client.channel}`, 1, client.username);
       }
       client.channel = channel;
@@ -35,11 +35,11 @@ function packet_reader(buffer, server, client){
             }
           }
         });
-        if (client.username) {
+        if (client.username){
           publisher.rpush(`userlist:${client.channel}`, client.username);
         }
         publisher.lrange(`userlist:${client.channel}`, 0, -1, (error, userList) =>{
-          if (error) {
+          if (error){
             console.error(error);
           }
           else{
@@ -90,7 +90,7 @@ function packet_reader(buffer, server, client){
         break;
       }
       let outgoingPacket = authObj.create_auth_okay();
-      if (client.username) {
+      if (client.username){
         publisher.lrem(`userlist:${client.channel}`, 1, client.username);
       }
       client.username = authUsername;
