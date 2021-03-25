@@ -167,11 +167,24 @@ nav .li .a p:hover {
 }
 
 .channelCurrent {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
     width: 7em;
     height: 44%;
     background-color: rgba(0, 0, 0, 0.363);
     border-radius: 8px;
     box-shadow: 10px 10px 20px -22px rgb(128, 128, 128);
+}
+
+.displayUserList {
+    color: rgb(255, 255, 255);
+    font-size: 1.1em;
+    font-weight: 900;
+    padding: 6px;
+    width: 100%;
+    text-align: center;
+    text-transform: uppercase;
 }
 
 .channels {

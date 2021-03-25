@@ -14,6 +14,7 @@ channelButton();
 let msgInfo = document.getElementsByClassName('mesgChat')[0];
 let sendMesg = document.getElementById('sendText');
 let convoBox = document.getElementById("conversationBoxWrapper");
+let userList = document.getElementById("userList");
 let chatForm = document.querySelector("form.chat");
 let guestUsername = document.getElementById('guestUsername');
 let loginButton = document.getElementById('loginButton');
@@ -52,8 +53,13 @@ chat_socket.on("error",console.error);
 chat_socket.on("open",() => chat_socket.joinChannel('lobby'));
 
 chat_socket.on(USER_LIST, function(packetObj){
+  userList.innerHTML = '';
   for(let i = 0; i < packetObj.users.length; i++){
-    console.log(packetObj.users[i]);
+    let username = packetObj.users[i];
+    let userListName = document.createElement("SPAN");
+    userListName.classList.add("displayUserList");
+    userListName.textContent = username;
+    userList.appendChild(userListName);
   }
 })
 
