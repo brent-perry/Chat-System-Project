@@ -38,6 +38,10 @@ function packet_reader(buffer, server, client){
         console.log("client tried to send message but has not joined a channel");
         break; // TODO send error that client should join channel first
       }
+      if (!client.username){
+        console.log("client tried to send message but has no username");
+        break; // TODO send error that client should join channel first
+      }
       let username = packet.read_string();
       let message = packet.read_string();
       let user_channel = client.channel;

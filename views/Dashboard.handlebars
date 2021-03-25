@@ -5,21 +5,22 @@
                 <div id="logoContainer">
                     <div class="logo"></div>
                 </div>
-                <div class="li" id="loginGuest">Login
-                </div>
                 <div id="guestContainer">
                     <div class="guestWrapper">
                         <h1 class="guestTitle">Guest</h1>
-                        <form id="guestForm" method="POST">
+                        <form id="guestForm" method="POST" autocomplete="off">
                             <input id="guestUsername" type="text" placeholder="Display Name">
                         </form>
                         <div class="li" id="loginButton">Login</div>
                     </div>
                 </div>
+
+<div id="channelThemeWrapper">
+
                 <div class="li" id="channelTitle">
                     <div class="a" id="channelContainer">
-                        <p>Channel</p>
-                        <div class="channels">
+                        <p id="channelButton">Channel</p>
+                        <div class="channels" id="channels">
                             <div class="channel">Lobby</div>
                             <div class="channel">Fun</div>
                             <div class="channel">Work</div>
@@ -36,10 +37,12 @@
                         <div class="themes" data-theme="jungle" id="jungleTheme"></div>
                         <div class="themes" data-theme="medieval" id="medievalTheme"></div>
                         <div class="themes" data-theme="urban" id="urbanTheme"></div>
-                        <div class="themes" data-theme="food" id="foodTheme"></div>
                         <div class="themes" data-theme="ocean" id="oceanTheme"></div>
                     </div>
                 </div>
+
+</div>
+
             </div>
         </nav>
     </div>
@@ -52,12 +55,11 @@
         </div>
     </div>
     <div id="conversationBoxWrapper">
-        </div>
     </div>
-    <div class="messageBox">
+</div>
+<div class="messageBox">
     <form class="chat">
-<!-- <input class="mesgChat" /> -->
-        <textarea rows="1" class="mesgChat"cols="50"></textarea>
+        <textarea rows="1" class="mesgChat" cols="50"></textarea>
         <div id="sendText">Send</div>
     </form>
 </div>
