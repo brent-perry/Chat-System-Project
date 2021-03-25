@@ -13,30 +13,23 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    overflow-y:hidden;
+    overflow-y: hidden;
 }
 
 h1 {
     color: rgb(255, 255, 255);
 }
 
-.a:hover {
-    cursor: pointer;
+p {
+    font-size: 1.4em;
 }
 
 .a:hover {
     cursor: pointer;
 }
 
-#guestContainer {
-    display: none;
-    margin-top: 20em;
-    justify-content: center;
-    position: absolute;
-}
-
-#guestContainer.showLogin {
-    display: flex;
+.a:hover {
+    cursor: pointer;
 }
 
 input {
@@ -51,7 +44,7 @@ input {
     box-shadow: 10px 10px 20px -22px rgb(128, 128, 128);
 }
 
-textarea{
+textarea {
     border-radius: 8px;
     background-color: rgba(53, 53, 53, 0.467);
     color: rgb(255, 255, 255);
@@ -65,16 +58,23 @@ textarea{
     height: auto;
 }
 
+#guestContainer {
+    display: flex;
+    z-index: 999;
+    justify-content: center;
+    position: absolute;
+}
+
 .guestWrapper {
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-    background-color: rgba(34, 39, 51, 0.42);
+    background-color: rgba(34, 39, 51, 0.9);
     box-shadow: 5px 5px 30px rgb(20, 20, 20);
-    border-radius: 8px;
-    padding: 20px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
 }
 
 textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
@@ -83,13 +83,8 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     outline: 0 none;
 }
 
-#loginGuest:hover {
-    box-shadow: 0 10px 30px rgba(23, 71, 229, 0.075) inset, 0 5px 20px rgba(229, 23, 195, 0.8);
-}
-
-.guestTitle {
-    text-align: center;
-    width: 100%;
+#guestTitle {
+    margin: 0;
 }
 
 #guestForm {
@@ -97,71 +92,54 @@ textarea:focus, input:focus, input[type]:focus, .uneditable-input:focus {
     text-align: center;
 }
 
-#loginGuest {
-    color: rgba(255, 255, 255, 0.514);
-    background: rgb(238, 3, 249);
-    background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%);
-    border: none;
-    margin-top: 10px;
-    font-size: 28px;
-    font-weight: 800;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: rgba(255, 255, 255, 0.555);
-    border-radius: 8px;
-    padding-left: 1em;
-    padding-right: 1em;
-    height: 10%;
+#loginButton.li {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 nav .ul {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-nav .li {
-    list-style: none;
-    margin: 20px;
+#channelThemeWrapper {
+    display: flex;
 }
 
 #channelTitle {
-    margin-right: auto;
+    margin-right: 20px;
 }
 
-.conversationUser{
-    font-weight: bold;
-    font-size: 22px;
-    color: rgb(255, 255, 255);
-    background:rgba(0, 0, 0, 0);
-
+.conversationText {
+    font-size: 1.3em;
+    font-weight: 900;
+    margin-left: .5em;
+    color: green;
 }
 
 .conversationUser {
+    font-weight: 900;
+    font-size: 1.3em;
     animation: conversationUser 5s ease infinite;
     -moz-animation: conversationUser 5s ease infinite;
     -webkit-animation: conversationUser 5s ease infinite;
-  }
-  
-  @keyframes conversationUser{
-    0%,
-    100% {
-      text-shadow: 0 0 1px rgb(255, 251, 250), 0 0 3px rgb(223, 22, 250), 0 0 10px rgb(250, 22, 182), 0 0 10px rgb(22, 223, 250), 0 0 .4px rgb(42, 254, 254), .5px .5px .1px rgb(65, 137, 155);
-      color: rgb(254, 40, 236);
+}
+
+@keyframes conversationUser {
+    0%, 100% {
+        text-shadow: 0 0 1px rgb(255, 251, 250), 0 0 3px rgb(223, 22, 250), 0 0 10px rgb(250, 22, 182), 0 0 10px rgb(22, 223, 250), 0 0 .4px rgb(42, 254, 254), .5px .5px .1px rgb(65, 137, 155);
+        color: rgb(254, 40, 236);
     }
     50% {
-      text-shadow: 0 0 .5px rgb(246, 145, 255), 0 0 1.5px rgb(197, 84, 163), 0 0 5px rgb(163, 24, 163), 0 0 5px rgb(132, 64, 141), 0 0 .2px rgb(11, 114, 128), .5px .5px .1px rgb(10, 64, 46);
-      color: rgb(66, 198, 202);
+        text-shadow: 0 0 .5px rgb(246, 145, 255), 0 0 1.5px rgb(197, 84, 163), 0 0 5px rgb(163, 24, 163), 0 0 5px rgb(132, 64, 141), 0 0 .2px rgb(11, 114, 128), .5px .5px .1px rgb(10, 64, 46);
+        color: rgb(66, 198, 202);
     }
-  }
-  
+}
 
-
-
-nav .li .a{
-    margin-top: 1.4em;
+nav .li .a {
     color: rgba(190, 190, 190, 0.404);
     text-decoration: none;
     font-weight: bold;
-    font-size: 18px;
     letter-spacing: 3px;
     text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.336);
     -webkit-text-stroke-width: 1px;
@@ -190,20 +168,38 @@ nav .li .a p:hover {
 
 .channelCurrent {
     width: 7em;
-    height: 55%;
+    height: 44%;
     background-color: rgba(0, 0, 0, 0.363);
     border-radius: 8px;
     box-shadow: 10px 10px 20px -22px rgb(128, 128, 128);
 }
 
+.channels {
+    display: none;
+    font-size: 1.2em;
+}
+
+.showChannel {
+    display: block;
+    position: absolute;
+    margin-left: 23px;
+    margin-top: -29px;
+}
+
+.channel:hover{
+    color: rgb(255, 2, 129);
+}
+
 #navDiv {
+    margin-top: .5em;
+    margin-bottom: .5em;
     border-color: rgba(78, 69, 70, 0.075);
     width: 100%;
     position: relative;
     box-shadow: 10px 10px 20px -22px rgb(128, 128, 128);
 }
 
-.ul .li .a::after {
+.ul .li .a::after, #themesDropdownContainer::after {
     position: absolute;
     content: "";
     height: 3px;
@@ -217,7 +213,7 @@ nav .li .a p:hover {
     box-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
 }
 
-.ul .li .a:hover::after {
+.ul .li .a:hover::after, #themesDropdownContainer:hover::after {
     transform: scaleX(1);
     transform-origin: left;
 }
@@ -230,7 +226,7 @@ nav .li .a p:hover {
 #conversationBoxWrapper {
     margin-left: auto;
     margin-right: auto;
-    width: 80%;
+    width: 75%;
     background-color: rgba(0, 0, 0, 0.363);
     box-shadow: 10px 10px 20px -22px rgb(128, 128, 128);
     border-radius: 8px;
@@ -240,15 +236,7 @@ nav .li .a p:hover {
     word-break: break-all;
     overflow: scroll;
     overflow-x: hidden;
-    box-shadow:
-    inset 0 0 60px rgb(245, 245, 245),
-    inset 20px 0 80px rgb(255, 0, 255),
-    inset -20px 0 80px rgb(0, 255, 255),
-    inset 20px 0 300px rgb(255, 0, 255),
-    inset -20px 0 300px rgb(0, 255, 255),
-    0 0 50px rgb(255, 255, 255),
-    -10px 0 80px rgb(255, 0, 255),
-    10px 0 80px rgb(0, 255, 255);
+    box-shadow: inset 0 0 60px rgb(245, 245, 245), inset 20px 0 80px rgb(255, 0, 255), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(255, 0, 255), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(255, 0, 255), 10px 0 80px rgb(0, 255, 255);
     scroll-behavior: smooth;
 }
 
@@ -256,21 +244,12 @@ nav .li .a p:hover {
     color: rgb(255, 255, 255);
     padding: 20px;
     border-radius: 8px;
-    margin: 4px;
     border: 1px solid rgba(255, 255, 255, 0.308);
     max-height: 500px;
     color: rgb(255, 255, 255);
-    font-family:'Mukta', sans-serif;
     margin: 15px;
-    max-height:100%;
+    max-height: 100%;
     box-sizing: border-box;
-    
-}
-
-#conversationText {
-    font-size: 16px;
-    font-weight: 500;
-    margin-left: 2em;
 }
 
 #sendButton {
@@ -289,17 +268,18 @@ nav .li .a p:hover {
     left: 70%;
 }
 
-.messageBox{
+.messageBox {
     position: absolute;
     bottom: 2%;
-    left: 25%;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .chat {
     display: flex;
 }
 
-#sendText {
+#sendText, #loginButton {
     padding: 13px;
     margin: 10px;
     font-size: 20px;
@@ -310,17 +290,9 @@ nav .li .a p:hover {
     background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%);
 }
 
-#sendText:hover {
+#sendText:hover, #loginButton:hover {
     cursor: pointer;
-    box-shadow:
-    inset 0 0 60px rgb(245, 245, 245),
-    inset 20px 0 80px rgb(255, 0, 255),
-    inset -20px 0 80px rgb(0, 255, 255),
-    inset 20px 0 300px rgb(255, 0, 255),
-    inset -20px 0 300px rgb(0, 255, 255),
-    0 0 50px rgb(255, 255, 255),
-    -10px 0 80px rgb(255, 0, 255),
-    10px 0 80px rgb(0, 255, 255);
+    box-shadow: inset 0 0 60px rgb(245, 245, 245), inset 20px 0 80px rgb(255, 0, 255), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(255, 0, 255), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(255, 0, 255), 10px 0 80px rgb(0, 255, 255);
 }
 
 .nameDisplay {
@@ -372,13 +344,15 @@ nav .li .a p:hover {
     box-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
 }
 
+#logoContainer {
+    margin-left: 1.7em;
+}
+
 .logo {
     background-image: url("/images/logo.svg");
     background-size: contain;
     height: 4em;
     width: 4em;
-    margin-left: auto;
-    margin-right: auto;
     background-repeat: no-repeat;
     margin: 2px;
 }
@@ -408,28 +382,37 @@ nav .li .a p:hover {
     }
 }
 
-.logo:hover{
-    -webkit-animation:spin 4s linear infinite;
-    -moz-animation:spin 4s linear infinite;
-    animation:spin 4s linear infinite;
+.logo:hover {
+    -webkit-animation: spin 4s linear infinite;
+    -moz-animation: spin 4s linear infinite;
+    animation: spin 4s linear infinite;
 }
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+@-moz-keyframes spin {
+    100% {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
 
 #logoContainer {
-    margin-top: 0.6em;
+    margin-top: 1em;
+    margin-left: 1em;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-}
-
-#logoContainer>h1 {
-    margin-top: -9px;
-    width: 100%;
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: 900;
 }
 
 #themesContainer {
@@ -449,15 +432,14 @@ nav .li .a p:hover {
 
 #themesDropdownButton {
     color: rgba(190, 190, 190, 0.404);
-text-decoration: none;
-font-weight: bold;
-font-size: 20px;
-letter-spacing: 3px;
-text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.336);
--webkit-text-stroke-width: 1px;
--webkit-text-stroke-color: rgba(73, 73, 73, 0.616);
-margin-top: 1em;
-margin-right: 2.7em;
+    text-decoration: none;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.336);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(73, 73, 73, 0.616);
+    margin-top: 1em;
+    margin-right: 2.7em;
 }
 
 .themes:hover, #themesDropdownButton:hover {
@@ -466,7 +448,6 @@ margin-right: 2.7em;
     color: rgb(238, 3, 249);
     text-decoration: none;
     text-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
-    
 }
 
 #themesContainer.show {
@@ -486,7 +467,7 @@ margin-right: 2.7em;
     background-size: contain;
     border-radius: 50%;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
 
 #spaceTheme {
@@ -496,7 +477,7 @@ margin-right: 2.7em;
     background-size: contain;
     border-radius: 50%;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
 
 #jungleTheme {
@@ -506,7 +487,7 @@ margin-right: 2.7em;
     background-size: contain;
     border-radius: 50%;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
 
 #medievalTheme {
@@ -516,7 +497,7 @@ margin-right: 2.7em;
     background-size: contain;
     border-radius: 50%;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
 
 #urbanTheme {
@@ -526,16 +507,7 @@ margin-right: 2.7em;
     background-size: contain;
     border-radius: 50%;
     background-size: cover;
-    background-position: center; 
-}
-
-#foodTheme {
-    background-image: url("/images/food.svg");
-    height: 60px;
-    width: 60px;
-    background-size: contain;
-    border-radius: 50%;
-    background-size: cover;
+    background-position: center;
 }
 
 #oceanTheme {
@@ -545,7 +517,7 @@ margin-right: 2.7em;
     background-size: contain;
     border-radius: 50%;
     background-size: cover;
-    background-position: center; 
+    background-position: center;
 }
 
 /* changing the themes to what design we are wanting. use location wanting to change attached with theme. */
@@ -571,8 +543,13 @@ body.space {
     background-image: url("/images/space.svg");
 }
 
-body.space #sendText {
+body.space #sendText, body.space #loginButton {
     background: rgb(233, 118, 204);
+}
+
+body.space #sendText:hover, body.space #loginButton:hover {
+    cursor: pointer;
+    box-shadow: inset 0 0 60px rgb(245, 245, 245), inset 20px 0 80px rgb(255, 0, 255), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(255, 0, 255), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(255, 0, 255), 10px 0 80px rgb(0, 255, 255);
 }
 
 body.space .profileImg {
@@ -598,11 +575,11 @@ body.space #spaceTheme {
 }
 
 body.space .conversationBox {
-    background: linear-gradient(90deg, rgba(238,3,249,1) 14%, rgba(171,17,243,1) 50%, rgba(98,32,237,1) 100%);
+    background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%);
     opacity: 0.8;
 }
 
-body.space #conversationBoxWrapper{
+body.space #conversationBoxWrapper {
     box-shadow: inset 0 0 60px rgb(245, 245, 245), inset 20px 0 80px rgb(255, 0, 255), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(255, 0, 255), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(255, 0, 255), 10px 0 80px rgb(0, 255, 255);
 }
 
@@ -610,11 +587,16 @@ body.space #conversationBoxWrapper{
 
 body.jungle {
     background-image: url("/images/jungle.svg");
-    background-position: left; 
+    background-position: left;
 }
 
-body.jungle #sendText {
+body.jungle #sendText, body.jungle #loginButton {
     background-image: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
+}
+
+body.jungle #sendText:hover, body.jungle #loginButton:hover {
+    cursor: pointer;
+    box-shadow: inset 0 0 60px rgb(19, 207, 60), inset 20px 0 80px rgb(0, 255, 98), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(0, 255, 98), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(0, 255, 21), 10px 0 80px rgb(0, 255, 255);
 }
 
 body.jungle .profileImg {
@@ -627,6 +609,14 @@ body.jungle nav .li .a:hover {
     color: rgb(182, 244, 146);
     text-decoration: none;
     text-shadow: 0px 0px 8px rgb(182, 244, 146);
+}
+
+body.jungle nav .li .a p:hover {
+    color: rgb(182, 244, 146);
+    ;
+    text-decoration: none;
+    text-shadow: 0px 0px 8px rgb(182, 244, 146);
+    ;
 }
 
 body.jungle .ul .li .a::after {
@@ -644,7 +634,7 @@ body.jungle .conversationBox {
     max-width: 100%;
 }
 
-body.jungle #conversationBoxWrapper{
+body.jungle #conversationBoxWrapper {
     box-shadow: inset 0 0 60px rgb(245, 245, 245), inset 20px 0 80px rgb(182, 244, 146), inset -20px 0 80px rgb(51, 139, 147), inset 20px 0 300px rgb(182, 244, 146), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(182, 244, 146), 10px 0 80px rgb(182, 244, 146);
 }
 
@@ -652,121 +642,107 @@ body.jungle #conversationBoxWrapper{
 
 body.medieval {
     background-image: url("/images/dagon.png");
-    background-position: left; 
+    background-position: left;
 }
 
-body.medieval #sendText {
-    background-image: linear-gradient( 109.6deg, rgba(5,84,94,1) 16%, #bbb 91.1% );
+body.medieval #sendText, body.medieval #loginButton {
+    background-image: linear-gradient( 109.6deg, rgba(5, 84, 94, 1) 16%, #bbb 91.1%);
+}
+
+body.medieval #sendText:hover, body.medieval #loginButton:hover {
+    cursor: pointer;
+    box-shadow: inset 0 0 60px rgb(19, 207, 60), inset 20px 0 80px rgb(0, 255, 98), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(0, 255, 98), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(0, 255, 21), 10px 0 80px rgb(0, 255, 255);
 }
 
 body.medieval .profileImg {
-    background: rgba(5,84,94,1);
-    border: 0.1em solid rgba(5,84,94,1);
-    box-shadow: 0px 0px 10px rgba(5,84,94,1);
+    background: rgba(5, 84, 94, 1);
+    border: 0.1em solid rgba(5, 84, 94, 1);
+    box-shadow: 0px 0px 10px rgba(5, 84, 94, 1);
 }
 
-body.medieval nav li a:hover {
-    color: rgba(5,84,94,1);
+body.medieval nav .li .a p:hover {
+    color: rgba(5, 84, 94, 1);
     text-decoration: none;
-    text-shadow: 0px 0px 8px rgba(5,84,94,1);
+    text-shadow: 0px 0px 8px rgba(5, 84, 94, 1);
 }
 
-body.medieval ul li a::after {
-    background: rgba(5,84,94,1);
-    box-shadow: 0px 0px 10px rgba(5,84,94,1);
+body.medieval nav .li .a:hover {
+    color: rgba(5, 84, 94, 1);
+    text-decoration: none;
+    text-shadow: 0px 0px 8px rgba(5, 84, 94, 1);
+}
+
+body.medieval .ul .li .a::after {
+    background: rgba(5, 84, 94, 1);
+    box-shadow: 0px 0px 10px rgba(5, 84, 94, 1);
 }
 
 body.medieval #medievalTheme {
-    border: 0.1em solid rgba(5,84,94,1);
-    box-shadow: 0px 0px 10px rgba(5,84,94,1);
+    border: 0.1em solid rgba(5, 84, 94, 1);
+    box-shadow: 0px 0px 10px rgba(5, 84, 94, 1);
 }
 
 body.medieval .conversationBox {
-    background-image: linear-gradient( 109.6deg, rgba(5,84,94,1) 16%, rgb(187, 187, 187) 91.1% );
+    background-image: linear-gradient( 109.6deg, rgba(5, 84, 94, 1) 16%, rgb(187, 187, 187) 91.1%);
     opacity: 0.8;
 }
 
-body.medieval #conversationBoxWrapper{
-    box-shadow: inset 0 0 60px rgb(45, 87, 80), inset 20px 0 80px rgb(90, 130, 139), inset -20px 0 80px rgba(5,84,94,1), inset 20px 0 300px rgb(255, 164, 164), inset -20px 0 300px rgba(5,84,94,1), 0 0 50px rgba(5,84,94,1), -10px 0 80px rgb(158, 207, 219), 10px 0 80px rgb(180, 221, 226);
+body.medieval #conversationBoxWrapper {
+    box-shadow: inset 0 0 60px rgb(45, 87, 80), inset 20px 0 80px rgb(90, 130, 139), inset -20px 0 80px rgba(5, 84, 94, 1), inset 20px 0 300px rgb(255, 164, 164), inset -20px 0 300px rgba(5, 84, 94, 1), 0 0 50px rgba(5, 84, 94, 1), -10px 0 80px rgb(158, 207, 219), 10px 0 80px rgb(180, 221, 226);
 }
 
 /* style for all the urban theme items */
 
-body.urban{
+body.urban {
     background-image: url("/images/urban.svg");
-    background-position: center top; 
+    background-position: center top;
 }
 
-body.urban #sendText {
-    background-image: linear-gradient( 109.6deg,  rgba(253,199,141,1) 11.3%, rgba(249,143,253,1) 100.2% );
+body.urban #sendText, body.urban #loginButton {
+    background-image: linear-gradient( 109.6deg, rgba(253, 199, 141, 1) 11.3%, rgba(249, 143, 253, 1) 100.2%);
+}
+
+body.urban #sendText:hover, body.urban #loginButton:hover {
+    cursor: pointer;
+    box-shadow: inset 0 0 60px rgb(19, 207, 60), inset 20px 0 80px rgb(0, 255, 98), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(0, 255, 98), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(0, 255, 21), 10px 0 80px rgb(0, 255, 255);
 }
 
 body.urban .profileImg {
-    background: rgba(249,143,253,1);
-    border: 0.1em solid rgba(249,143,253,1);
-    box-shadow: 0px 0px 10px rgba(249,143,253,1);
+    background: rgba(249, 143, 253, 1);
+    border: 0.1em solid rgba(249, 143, 253, 1);
+    box-shadow: 0px 0px 10px rgba(249, 143, 253, 1);
 }
 
-body.urban nav li a:hover {
-    color: rgba(249,143,253,1);
+body.urban nav .li a:hover {
+    color: rgba(249, 143, 253, 1);
     text-decoration: none;
-    text-shadow: 0px 0px 8px rgba(249,143,253,1);
+    text-shadow: 0px 0px 8px rgba(249, 143, 253, 1);
 }
 
-body.urban ul li a::after {
-    background: rgba(249,143,253,1);
-    box-shadow: 0px 0px 10px rgba(249,143,253,1);
+body.urban nav .li .a p:hover {
+    color: rgba(249, 143, 253, 1);
+    text-decoration: none;
+    text-shadow: 0px 0px 8px rgba(249, 143, 253, 1);
+}
+
+body.urban .ul .li .a::after {
+    background: rgba(249, 143, 253, 1);
+    box-shadow: 0px 0px 10px rgba(249, 143, 253, 1);
 }
 
 body.urban #urbanTheme {
-    border: 0.1em solid rgba(249,143,253,1);
-    box-shadow: 0px 0px 10px rgba(249,143,253,1);
+    border: 0.1em solid rgba(249, 143, 253, 1);
+    box-shadow: 0px 0px 10px rgba(249, 143, 253, 1);
 }
 
 body.urban .conversationBox {
     border: 1px solid rgb(241, 207, 11);
-    background-image: linear-gradient( 109.6deg,  rgba(253,199,141,1) 11.3%, rgba(253,199,141,1) 100.2% );
+    background-image: linear-gradient( 109.6deg, rgba(253, 199, 141, 1) 11.3%, rgba(253, 199, 141, 1) 100.2%);
     opacity: 0.8;
 }
 
-body.urban #conversationBoxWrapper{
-    box-shadow: inset 0 0 60px rgb(245, 245, 245), inset 20px 0 80px rgba(249,143,253,1), inset -20px 0 80px rgba(249,143,253,1), inset 20px 0 300px rgba(253,199,141,1), inset -20px 0 300px rgba(253,199,141,1), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgba(253,199,141,1), 10px 0 80px rgba(253,199,141,1);
-}
-
-/* style for all the food theme items */
-
-body.food {
-    background-image: url("/images/food.svg");
-}
-
-body.food #sendText {
-    background: rgb(235, 5, 74);
-}
-
-body.food .profileImg {
-    background: rgb(235, 5, 74);
-    border: 0.1em solid rgb(235, 5, 74);
-    box-shadow: 0px 0px 10px rgba(235, 5, 74, 0.8);
-}
-
-body.food nav .li .a:hover {
-    color: rgb(235, 5, 74);
-    text-decoration: none;
-    text-shadow: 0px 0px 8px rgba(235, 5, 74, 0.8);
-}
-
-body.food .ul .li .a::after {
-    background: rgb(235, 5, 74);
-    box-shadow: 0px 0px 10px rgba(235, 5, 74, 0.8);
-}
-
-body.food #foodTheme {
-    border: 0.1em solid rgb(235, 5, 74);
-    box-shadow: 0px 0px 10px rgba(235, 5, 74, 0.8);
-}
-
-body.food .conversationBox {
-    border: 1px solid rgb(235, 5, 74);
+body.urban #conversationBoxWrapper {
+    box-shadow: inset 0 0 60px rgb(245, 245, 245), inset 20px 0 80px rgba(249, 143, 253, 1), inset -20px 0 80px rgba(249, 143, 253, 1), inset 20px 0 300px rgba(253, 199, 141, 1), inset -20px 0 300px rgba(253, 199, 141, 1), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgba(253, 199, 141, 1), 10px 0 80px rgba(253, 199, 141, 1);
 }
 
 /* style for all the ocean theme items */
@@ -775,53 +751,150 @@ body.ocean {
     background-image: url("/images/ocean.png");
 }
 
-body.ocean #sendText {
-    background: rgba(149,245,211,1);
+body.ocean #sendText, body.ocean #loginButton {
+    background: linear-gradient( 110.5deg, rgba(71, 114, 148, 1) 14.9%, rgba(149, 245, 211, 1) 77.9%);
+}
+
+body.ocean #sendText:hover, body.ocean #loginButton:hover {
+    cursor: pointer;
+    box-shadow: inset 0 0 60px rgb(19, 207, 60), inset 20px 0 80px rgb(0, 255, 98), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(0, 255, 98), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(0, 255, 21), 10px 0 80px rgb(0, 255, 255);
 }
 
 body.ocean .profileImg {
-    background: rgba(149,245,211,1);
-    border: 0.1em solid rgba(149,245,211,1);
-    box-shadow: 0px 0px 10px rgba(149,245,211,1);
+    background: rgba(149, 245, 211, 1);
+    border: 0.1em solid rgba(149, 245, 211, 1);
+    box-shadow: 0px 0px 10px rgba(149, 245, 211, 1);
 }
 
 body.ocean nav .li .a:hover {
-    color: rgb(17, 14, 247);
+    color: rgb(159, 252, 255);
     text-decoration: none;
-    text-shadow: 0px 0px 8px rgba(17, 14, 247, 0.8);
+    text-shadow: 0px 0px 8px rgba(180, 255, 243, 0.8);
 }
 
-body.ocean #sendText {
-    background: linear-gradient( 110.5deg,  rgba(71,114,148,1) 14.9%, rgba(149,245,211,1) 77.9% );
+body.ocean nav .li .a p:hover {
+    color: rgba(180, 255, 243, 0.8);
+    text-decoration: none;
+    text-shadow: 0px 0px 8px rgba(180, 255, 243, 0.8);
 }
 
 body.ocean .profileImg {
-    background: rgba(149,245,211,1);
-    border: 0.1em solid rgba(149,245,211,1);
-    box-shadow: 0px 0px 10px rgba(149,245,211,1);
+    background: rgba(149, 245, 211, 1);
+    border: 0.1em solid rgba(149, 245, 211, 1);
+    box-shadow: 0px 0px 10px rgba(149, 245, 211, 1);
 }
 
-body.ocean nav li a:hover {
-    color: rgba(149,245,211,1);
+body.ocean nav .li .a:hover {
+    color: rgba(149, 245, 211, 1);
     text-decoration: none;
-    text-shadow: 0px 0px 8px rgba(149,245,211,1);
+    text-shadow: 0px 0px 8px rgba(149, 245, 211, 1);
 }
 
-body.ocean ul li a::after {
-    background: rgba(149,245,211,1);
-    box-shadow: 0px 0px 10px rgba(149,245,211,1);
+body.ocean ul .li .a::after {
+    background: rgba(149, 245, 211, 1);
+    box-shadow: 0px 0px 10px rgba(149, 245, 211, 1);
 }
 
 body.ocean #oceanTheme {
-    border: 0.1em solid rgba(149,245,211,1);
-    box-shadow: 0px 0px 10px rgba(149,245,211,1);
+    border: 0.1em solid rgba(149, 245, 211, 1);
+    box-shadow: 0px 0px 10px rgba(149, 245, 211, 1);
 }
 
 body.ocean .conversationBox {
-    border: 1px solid rgba(149,245,211,1);
-    background: linear-gradient( 110.5deg,  rgba(71,114,148,1) 14.9%, rgba(149,245,211,1) 77.9% );
+    border: 1px solid rgba(149, 245, 211, 1);
+    background: linear-gradient( 110.5deg, rgba(71, 114, 148, 1) 14.9%, rgba(149, 245, 211, 1) 77.9%);
 }
 
-body.ocean #conversationBoxWrapper{
+body.ocean #conversationBoxWrapper {
     box-shadow: inset 0 0 60px rgb(245, 245, 245), inset 20px 0 80px rgb(154, 255, 225), inset -20px 0 80px rgb(143, 150, 253), inset 20px 0 300px rgb(141, 217, 253), inset -20px 0 300px rgb(143, 141, 253), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(141, 203, 253), 10px 0 80px rgb(141, 212, 253);
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 994px) {
+    #conversationBoxWrapper{
+        width: 70%;
+    }
+}
+
+@media screen and (max-width: 810px) {
+    #conversationBoxWrapper{
+        width: 60%;
+    }
+    .profileImg {
+        margin-left: 8px;
+        height: 3.3em;
+        width: 3.3em;
+    }
+    .nameDisplay {
+        margin-left: 7px;
+        font-size: 1.4em;
+    }
+    .channelCurrent {
+        width: 5em;
+        height: 46%;
+    }
+}
+
+@media screen and (max-width: 617px) {
+    #conversationBoxWrapper{
+        width: 50%;
+    }
+    textarea {
+        width: 18em;
+    }
+    .profileImg {
+        margin-left: 8px;
+        height: 3.3em;
+        width: 3.3em;
+    }
+    .nameDisplay {
+        margin-left: 7px;
+        font-size: 1.4em;
+    }
+    .channelCurrent {
+        width: 4em;
+    }
+}
+/* MOBILE MEDIA QUERIES */
+
+@media screen and (max-width: 499px) {
+    p {
+        font-size: 18px;
+        margin-left: 4px;
+        margin-right: 4px;
+    }
+    #conversationBoxWrapper {
+        height: 55%;
+        margin-top: 1em;
+        margin-left: 4.4em;
+        width: 60%;
+    }
+    textarea {
+        width: 10em;
+    }
+    .profileImg {
+        margin-left: 8px;
+        height: 3em;
+        width: 3em;
+    }
+    .nameDisplay {
+        margin-left: 7px;
+        font-size: 1.2em;
+    }
+    .channelCurrent {
+        width: 4em;
+        height: 31%;
+    }
+    .conversationBox {
+        padding: 7px;
+    }
+    .conversationUser, .conversationText {
+        font-size: .9em;
+    }
+    .logo {
+        margin-top: -6px;
+        height: 3em;
+        width: 3em;
+    }
 }

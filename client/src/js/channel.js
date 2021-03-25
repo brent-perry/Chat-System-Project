@@ -18,11 +18,13 @@ function currentChannel(){
     chat_socket.joinChannel(currentChannel);
 };
 
-let channelDrop = document.getElementById("channelTitle");
-let channelContent = document.getElementById("channelContainer");
-channelDrop.addEventListener("click", event =>{
-    if (channelContent.classList.contains("show"))
-        channelContent.classList.remove("show");
+export function channelButton(){
+let channelButton = document.getElementById("channelButton");
+let channelContent = document.getElementById("channels");
+channelButton.addEventListener("click", event =>{
+    if (channelContent.classList.contains("showChannel"))
+        channelContent.classList.remove("showChannel");
     else
-        channelContent.classList.add("show");
+        channelContent.classList.add("showChannel");
 });
+}
