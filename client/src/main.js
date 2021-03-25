@@ -19,6 +19,7 @@ let chatForm = document.querySelector("form.chat");
 let guestUsername = document.getElementById('guestUsername');
 let loginButton = document.getElementById('loginButton');
 let guestForm = document.getElementById('guestForm');
+let showUsername = document.getElementById('myUsername');
 
 function submitChat(event){
   event.preventDefault();
@@ -33,6 +34,7 @@ function submitUsername(event){
   if (guestUsername.value.length < 1){
     return;
   }
+  showUsername.innerHTML = guestUsername.value;
   chat_socket.sendUsername(guestUsername.value);
 }
 

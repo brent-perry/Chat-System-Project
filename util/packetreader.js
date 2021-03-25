@@ -96,6 +96,9 @@ function packet_reader(buffer, server, client){
       client.username = authUsername;
       publisher.rpush(`userlist:${client.channel}`, client.username);
       client.send(outgoingPacket.buffer);
+      if (client.channel){
+        publisher.publish('userlist-update',client.channel);
+      }
       break;
   }
 }
