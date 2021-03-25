@@ -72,7 +72,7 @@ function packet_reader(buffer, server, client){
     case authObj.AUTHENTICATE_REQUEST:
       let authUsername = packet.read_string();
       let usernameTaken = false;
-      if (typeof authUsername === 'string' && authUsername.length < 20){
+      if (typeof authUsername === 'string' && authUsername.length < 20 && authUsername){
         server.clients.forEach((item, i) =>{
           if (item.username == authUsername){
             usernameTaken = true;
