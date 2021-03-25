@@ -2,6 +2,7 @@
     font-family: 'Mukta', sans-serif;
 }
 
+
 a {
     text-decoration: none;
 }
@@ -65,6 +66,9 @@ textarea {
     position: absolute;
 }
 
+
+
+
 .guestWrapper {
     background-color: rgba(34, 39, 51, 0.9);
     box-shadow: 5px 5px 30px rgb(20, 20, 20);
@@ -114,7 +118,7 @@ nav .ul {
     font-size: 1.3em;
     font-weight: 900;
     margin-left: .5em;
-    color: green;
+    color: rgb(255, 255, 255);
 }
 
 .conversationUser {
@@ -187,7 +191,8 @@ nav .li .a p:hover {
 }
 
 .channel:hover{
-    color: rgb(255, 2, 129);
+    color: rgb(255, 211, 255);
+    text-shadow: 2px 0px 20px rgb(255, 255, 255);
 }
 
 #navDiv {
@@ -250,6 +255,8 @@ nav .li .a p:hover {
     margin: 15px;
     max-height: 100%;
     box-sizing: border-box;
+    width: max-content;
+    box-shadow:0 0 60px rgb(245, 245, 245);
 }
 
 #sendButton {
@@ -354,8 +361,10 @@ nav .li .a p:hover {
     height: 4em;
     width: 4em;
     background-repeat: no-repeat;
-    margin: 2px;
+    margin: 4px;
 }
+
+
 
 .logo:hover {
     -webkit-animation: spin 4s linear infinite;
@@ -444,7 +453,7 @@ nav .li .a p:hover {
 
 .themes:hover, #themesDropdownButton:hover {
     cursor: pointer;
-    opacity: .6;
+    opacity: 1;
     color: rgb(238, 3, 249);
     text-decoration: none;
     text-shadow: 0px 0px 10px rgba(229, 23, 195, 0.8);
@@ -576,7 +585,6 @@ body.space #spaceTheme {
 
 body.space .conversationBox {
     background: linear-gradient(90deg, rgba(238, 3, 249, 1) 14%, rgba(171, 17, 243, 1) 50%, rgba(98, 32, 237, 1) 100%);
-    opacity: 0.8;
 }
 
 body.space #conversationBoxWrapper {
@@ -594,9 +602,21 @@ body.jungle #sendText, body.jungle #loginButton {
     background-image: linear-gradient(to right, rgb(182, 244, 146), rgb(51, 139, 147));
 }
 
-body.jungle #sendText:hover, body.jungle #loginButton:hover {
+body.jungle #sendText:hover, body.jungle #loginButton:hover{
     cursor: pointer;
-    box-shadow: inset 0 0 60px rgb(19, 207, 60), inset 20px 0 80px rgb(0, 255, 98), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(0, 255, 98), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(0, 255, 21), 10px 0 80px rgb(0, 255, 255);
+    box-shadow: inset 0 0 60px rgb(19, 150, 128), inset 20px 0 80px rgb(140, 255, 184), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(0, 255, 98), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(0, 255, 21), 10px 0 80px rgb(0, 255, 255);
+}
+
+body.jungle .mesgChat{
+    box-shadow: 0px 0px 10px rgb(182, 244, 146);
+}
+
+body.jungle .mesgChat:focus{
+    border-color: rgba(23, 229, 126, 0.8);
+}
+
+body.jungle .channel:hover{
+    color: rgb(101, 145, 76);
 }
 
 body.jungle .profileImg {
@@ -611,15 +631,25 @@ body.jungle nav .li .a:hover {
     text-shadow: 0px 0px 8px rgb(182, 244, 146);
 }
 
-body.jungle nav .li .a p:hover {
+body.jungle #themesDropdownButton:hover{
     color: rgb(182, 244, 146);
-    ;
     text-decoration: none;
     text-shadow: 0px 0px 8px rgb(182, 244, 146);
-    ;
+    opacity: 1;
 }
 
-body.jungle .ul .li .a::after {
+body.jungle nav .li .a p:hover {
+    color: rgb(182, 244, 146);
+    text-decoration: none;
+    text-shadow: 0px 0px 8px rgb(182, 244, 146);
+}
+
+body.jungle .ul .li .a::after{
+    background: rgb(182, 244, 146);
+    box-shadow: 0px 0px 10px rgb(182, 244, 146);
+}
+
+body.jungle  #themesDropdownButton::after{
     background: rgb(182, 244, 146);
     box-shadow: 0px 0px 10px rgb(182, 244, 146);
 }
@@ -651,7 +681,14 @@ body.medieval #sendText, body.medieval #loginButton {
 
 body.medieval #sendText:hover, body.medieval #loginButton:hover {
     cursor: pointer;
-    box-shadow: inset 0 0 60px rgb(19, 207, 60), inset 20px 0 80px rgb(0, 255, 98), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(0, 255, 98), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(0, 255, 21), 10px 0 80px rgb(0, 255, 255);
+    box-shadow: inset 0 0 60px rgb(38, 61, 77), inset 20px 0 80px rgb(227, 255, 238), inset -20px 0 80px rgb(10, 82, 82), inset 20px 0 300px rgb(71, 51, 107), inset -20px 0 300px rgb(212, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(56, 80, 116), 10px 0 80px rgb(176, 255, 255);
+}
+
+body.medieval #themesDropdownButton:hover{
+    color: rgba(5, 84, 94, 1);
+    text-decoration: none;
+    text-shadow: 0px 0px 8px rgba(5, 84, 94, 1);
+    opacity: 1;
 }
 
 body.medieval .profileImg {
@@ -660,16 +697,35 @@ body.medieval .profileImg {
     box-shadow: 0px 0px 10px rgba(5, 84, 94, 1);
 }
 
+body.medieval .channel:hover{
+    color: rgb(16, 50, 54);
+}
+
 body.medieval nav .li .a p:hover {
     color: rgba(5, 84, 94, 1);
     text-decoration: none;
     text-shadow: 0px 0px 8px rgba(5, 84, 94, 1);
 }
 
+body.medieval .mesgChat{
+    box-shadow: 0px 0px 10px rgba(5, 84, 94, 1);
+}
+
+body.medieval .mesgChat:focus{
+    border-color:  rgba(5, 84, 94, 1);
+}
+
 body.medieval nav .li .a:hover {
     color: rgba(5, 84, 94, 1);
     text-decoration: none;
     text-shadow: 0px 0px 8px rgba(5, 84, 94, 1);
+}
+
+body.medieval #themesDropdownButton:hover{
+    color: rgba(5, 84, 94, 1);
+    text-decoration: none;
+    text-shadow: 0px 0px 8px rgba(5, 84, 94, 1);;
+    opacity: 1;
 }
 
 body.medieval .ul .li .a::after {
@@ -684,7 +740,6 @@ body.medieval #medievalTheme {
 
 body.medieval .conversationBox {
     background-image: linear-gradient( 109.6deg, rgba(5, 84, 94, 1) 16%, rgb(187, 187, 187) 91.1%);
-    opacity: 0.8;
 }
 
 body.medieval #conversationBoxWrapper {
@@ -704,7 +759,7 @@ body.urban #sendText, body.urban #loginButton {
 
 body.urban #sendText:hover, body.urban #loginButton:hover {
     cursor: pointer;
-    box-shadow: inset 0 0 60px rgb(19, 207, 60), inset 20px 0 80px rgb(0, 255, 98), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(0, 255, 98), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(0, 255, 21), 10px 0 80px rgb(0, 255, 255);
+    box-shadow: inset 0 0 60px rgb(232, 154, 235), inset 20px 0 80px rgb(255, 230, 163), inset -20px 0 80px rgb(255, 178, 251), inset 20px 0 300px rgb(255, 192, 255), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(255, 195, 255), 10px 0 80px rgb(212, 255, 255);
 }
 
 body.urban .profileImg {
@@ -713,10 +768,29 @@ body.urban .profileImg {
     box-shadow: 0px 0px 10px rgba(249, 143, 253, 1);
 }
 
+body.urban #themesDropdownButton:hover{
+    color: rgba(249, 143, 253, 1);
+    text-decoration: none;
+    text-shadow: 0px 0px 8px rgba(249, 143, 253, 1);
+    opacity: 1;
+}
+
+body.urban .channel:hover{
+    color: rgb(179, 47, 184);
+}
+
 body.urban nav .li a:hover {
     color: rgba(249, 143, 253, 1);
     text-decoration: none;
     text-shadow: 0px 0px 8px rgba(249, 143, 253, 1);
+}
+
+body.urban .mesgChat{
+    box-shadow: 0px 0px 10px rgba(249, 143, 253, 1);
+}
+
+body.urban .mesgChat:focus{
+    border-color:  rgba(249, 143, 253, 1);
 }
 
 body.urban nav .li .a p:hover {
@@ -738,7 +812,6 @@ body.urban #urbanTheme {
 body.urban .conversationBox {
     border: 1px solid rgb(241, 207, 11);
     background-image: linear-gradient( 109.6deg, rgba(253, 199, 141, 1) 11.3%, rgba(253, 199, 141, 1) 100.2%);
-    opacity: 0.8;
 }
 
 body.urban #conversationBoxWrapper {
@@ -760,16 +833,40 @@ body.ocean #sendText:hover, body.ocean #loginButton:hover {
     box-shadow: inset 0 0 60px rgb(19, 207, 60), inset 20px 0 80px rgb(0, 255, 98), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(0, 255, 98), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(0, 255, 21), 10px 0 80px rgb(0, 255, 255);
 }
 
+body.ocean #sendText:hover{
+    cursor: pointer;
+    box-shadow: inset 0 0 60px rgb(169, 255, 188), inset 20px 0 80px rgb(0, 255, 98), inset -20px 0 80px rgb(0, 255, 255), inset 20px 0 300px rgb(0, 255, 98), inset -20px 0 300px rgb(0, 255, 255), 0 0 50px rgb(255, 255, 255), -10px 0 80px rgb(0, 255, 21), 10px 0 80px rgb(0, 255, 255);
+}
+
+body.ocean .channel:hover{
+    color: rgb(26, 152, 156);
+}
+
 body.ocean .profileImg {
     background: rgba(149, 245, 211, 1);
     border: 0.1em solid rgba(149, 245, 211, 1);
     box-shadow: 0px 0px 10px rgba(149, 245, 211, 1);
 }
 
+body.ocean #themesDropdownButton:hover{
+    color: rgba(149, 245, 211, 1);
+    text-decoration: none;
+    text-shadow: 0px 0px 8px rgb(255, 255, 255);
+    opacity: 1;
+}
+
 body.ocean nav .li .a:hover {
     color: rgb(159, 252, 255);
     text-decoration: none;
     text-shadow: 0px 0px 8px rgba(180, 255, 243, 0.8);
+}
+
+body.ocean .mesgChat{
+    box-shadow: 0px 0px 10px rgba(180, 255, 243, 0.8);
+}
+
+body.ocean .mesgChat:focus{
+    border-color:  rgba(180, 255, 243, 0.8);
 }
 
 body.ocean nav .li .a p:hover {
@@ -790,7 +887,7 @@ body.ocean nav .li .a:hover {
     text-shadow: 0px 0px 8px rgba(149, 245, 211, 1);
 }
 
-body.ocean ul .li .a::after {
+body.ocean .ul .li .a::after {
     background: rgba(149, 245, 211, 1);
     box-shadow: 0px 0px 10px rgba(149, 245, 211, 1);
 }
