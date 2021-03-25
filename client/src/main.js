@@ -6,6 +6,7 @@ import {enableThemes} from './js/theme';
 import {channelSelector} from './js/channel';
 import {sendChat,chat_socket} from './socket';
 import {guestLogin} from './js/guest';
+import {USER_LIST} from '../../lib/messages/server/users';
 
 enableThemes();
 channelSelector();
@@ -29,7 +30,7 @@ function submitChat(event){
 
 function submitUsername(event){
   event.preventDefault();
-  if (guestUsername.value.length < 1) {
+  if (guestUsername.value.length < 1){
     return;
   }
   chat_socket.sendUsername(guestUsername.value);
@@ -50,6 +51,12 @@ chat_socket.on(AUTHENTICATE_STATUS,packetObj =>{
 chat_socket.on("error",console.error);
 
 chat_socket.on("open",() => chat_socket.joinChannel('lobby'));
+
+chat_socket.on(USER_LIST, function(packetObj){
+  for(let i = 0; i < packetObj.users.length; i++){
+    console.log(packetObj.users[i]);
+  }
+})
 
 chat_socket.on(CHAT_MESSAGE,function(packetObj){
   let conversationBox = document.createElement("DIV");
