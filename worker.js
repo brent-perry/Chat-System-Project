@@ -17,17 +17,8 @@ app.use(express.static(path.join(__dirname + '/client')));
 app.set('views', path.join(__dirname, 'views'));
 
 app.get('/', function (req, res){
-  res.render('welcome');
-});
-
-app.get('/register', function (req, res){
-  res.render('register');
-});
-
-app.get('/dashboard', function (req, res){
   res.render('dashboard');
 });
-
 
 console.log('server listening on port 3000');
 server.listen(3000);
