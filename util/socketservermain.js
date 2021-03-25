@@ -2,7 +2,7 @@
 
 const WebSocket = require('ws');
 const { packet_reader } = require('./packetreader');
-const {subscriber} = require('../lib/redis');
+const {subscriber, publisher} = require('../lib/redis');
 const {binaryStringToBuffer} = require('./buffer_strings');
 
 function initServer(server){
@@ -33,6 +33,12 @@ function initServer(server){
       console.log('Received message', message);
       packet_reader(message, socket_server, ws);
     });
+
+    ws.on('close', () =>{
+      if (ws.channel && ws.username){
+        publisher.lrem(`userlist:${ws.channel}`, 1, ws.username);
+      }
+    })
   });
 }
 

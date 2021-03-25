@@ -6,6 +6,7 @@ const Packet = require('../lib/packet');
 const {CHAT_MESSAGE} = require('../lib/messages/client/chat');
 const {JOIN_CHANNEL} = require('../lib/messages/client/channel');
 const authObj = require('../lib/messages/server/authentication');
+const {create_user_list_packet} = require('../lib/messages/server/users');
 
 function packet_reader(buffer, server, client){
   const packet = new Packet(buffer);
@@ -18,6 +19,9 @@ function packet_reader(buffer, server, client){
       }
       channel = channel.toLowerCase();
       console.log(`client joined channel: ${channel}`);
+      if (client.channel && client.username){
+        publisher.lrem(`userlist:${client.channel}`, 1, client.username);
+      }
       client.channel = channel;
       publisher.lrange(`chat_history:${channel}`,0,-1,(error,messages) =>{
           if (error){
@@ -29,6 +33,19 @@ function packet_reader(buffer, server, client){
               let arrayBuffer = binaryStringToBuffer(messages[index]);
               client.send(arrayBuffer);
             }
+          }
+        });
+        if (client.username){
+          publisher.rpush(`userlist:${client.channel}`, client.username);
+        }
+        publisher.lrange(`userlist:${client.channel}`, 0, -1, (error, userList) =>{
+          if (error){
+            console.error(error);
+          }
+          else{
+            console.log(userList);
+            let usersPacket = create_user_list_packet(userList);
+            client.send(usersPacket.buffer);
           }
         });
       break;
@@ -55,7 +72,7 @@ function packet_reader(buffer, server, client){
     case authObj.AUTHENTICATE_REQUEST:
       let authUsername = packet.read_string();
       let usernameTaken = false;
-      if (typeof authUsername === 'string' && authUsername.length < 20){
+      if (typeof authUsername === 'string' && authUsername.length < 20 && authUsername){
         server.clients.forEach((item, i) =>{
           if (item.username == authUsername){
             usernameTaken = true;
@@ -73,7 +90,11 @@ function packet_reader(buffer, server, client){
         break;
       }
       let outgoingPacket = authObj.create_auth_okay();
+      if (client.username){
+        publisher.lrem(`userlist:${client.channel}`, 1, client.username);
+      }
       client.username = authUsername;
+      publisher.rpush(`userlist:${client.channel}`, client.username);
       client.send(outgoingPacket.buffer);
       break;
   }
