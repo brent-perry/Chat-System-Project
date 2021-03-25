@@ -1,5 +1,7 @@
 "use strict";
 import { chat_socket } from '../socket';
+let convoBox = document.getElementById("conversationBoxWrapper");
+
 
 export function channelSelector(){
     let channelButtons = document.getElementsByClassName('channel');
@@ -15,6 +17,7 @@ function currentChannel(){
         channelButtons[i].classList.remove('selectedChannel');
     }
     this.classList.add('selectedChannel');
+    convoBox.innerHTML = '';
     chat_socket.joinChannel(currentChannel);
 };
 
