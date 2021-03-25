@@ -16,17 +16,17 @@ function packet_reader(buffer, server, client){
       if (channel.length > 20){
         throw new Error('Channel length exceeds 20 characters!');
       }
+      channel = channel.toLowerCase();
       console.log(`client joined channel: ${channel}`);
       client.channel = channel;
-      publisher.lrange(`chat_history:${channel}`,0,-1,messages =>
-        {
-          if (messages === null) {
-            console.log("send a message");
+      publisher.lrange(`chat_history:${channel}`,0,-1,(error,messages) =>{
+          if (error){
+            console.error(error);
           }
-          else {
-            // messages.reverse();
+          if (messages && messages.length){
+            messages.reverse();
             for (let index = 0 ; index < messages.length ; ++index){
-              let arrayBuffer = binaryStringToBuffer(messages[i]);
+              let arrayBuffer = binaryStringToBuffer(messages[index]);
               client.send(arrayBuffer);
             }
           }
@@ -42,8 +42,7 @@ function packet_reader(buffer, server, client){
       let message = packet.read_string();
       let user_channel = client.channel;
       let binaryString = bufferToBinaryString(packet.buffer);
-      publisher.lpush(`chat_history:${user_channel}`,binaryString,() =>
-        {
+      publisher.lpush(`chat_history:${user_channel}`,binaryString,() =>{
         publisher.ltrim(`chat_history:${user_channel}`,0,199);
         });
       publisher.publish(`chat:${user_channel}`,binaryString);
