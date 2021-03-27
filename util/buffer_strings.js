@@ -16,7 +16,7 @@ function binaryStringToBuffer(str){
 	let uint8Array = new Uint8Array(arrayBuffer);
 	for (let i = 0 ; i < str.length ; ++i)
 		uint8Array[i] = str.charCodeAt(i);
-	return arrayBuffer;
+	return uint8Array;
 }
 
 module.exports = {bufferToBinaryString,binaryStringToBuffer};
